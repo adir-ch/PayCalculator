@@ -8,6 +8,7 @@ This document will be updated during my work.
 - The system structure was build following the Domain Driven Design principles.
 - The purpose was to first design a model, and build the application according to the common language that is presented in the model.
 - Each service is a standalone service that can be stored separately
+
 ### General Coding notes ###
 
 - The client is a simple class that run different scenarios on the code, in real apps it can be WebApp or WPF app, since the server is accessible via WebApi (fake WebApi).
@@ -19,6 +20,7 @@ This document will be updated during my work.
 - A business object will always get created by the DAO, a service will never create a business object (DDD).
 - Tests are implemented for business object only.
 - The test should cover the entire code, but since time is limited, tests are not implemented for the skeleton classes (such as fake DB or webapi).
+- I should have called BusinessObjects project BusinessComponents :-(
 
 ### 3rd party ###
 

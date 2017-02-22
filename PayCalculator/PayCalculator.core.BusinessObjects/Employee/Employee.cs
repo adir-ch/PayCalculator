@@ -24,12 +24,8 @@ namespace PayCalculator.core.BusinessObjects.Employee
 
         public void Init(string name, string location, string grossSalary)
         {
-            Name = name;
-            Location = location;
-            Salary.GrossSalary = grossSalary; 
-            _log.DebugFormat("Init employee - Name: {0}, Location: {1}, Gross salary={2}", Name, Location, Salary.GrossSalary);
+            _log.DebugFormat("Init employee - Name: {0}, Location: {1}", Name, Location);
         }
-
 
         public ISalary CalculateNetSalary()
         {
