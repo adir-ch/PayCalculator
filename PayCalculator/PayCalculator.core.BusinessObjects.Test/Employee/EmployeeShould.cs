@@ -23,5 +23,15 @@ namespace PayCalculator.core.BusinessObjects.Test.Employee
             Assert.AreEqual(employee.Location, location);
             Assert.AreEqual(employee.EmployeeSalary.GrossSalary.ToString() , grossSalary);
         }
+
+        [Test]
+        public void ThrowAnExceptionOnIncorrectSalaryFormatInput ([Values("Adir")] string name,
+                                                                  [Values("Australia")] string location,
+                                                                  [Values("INCORRECT")] string grossSalary)
+        {
+            cbc.Employee employee = new cbc.Employee();
+            // Using a Lambda expression
+            Assert.Throws<FormatException>(() => { employee.Init(name, location, grossSalary); });
+        }
     }
 }
