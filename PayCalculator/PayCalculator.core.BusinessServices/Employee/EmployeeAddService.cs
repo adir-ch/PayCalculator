@@ -30,7 +30,9 @@ namespace PayCalculator.core.BusinessServices.Employee
 
         protected override void ValidateRequest(EmployeeAddServiceRequest request)
         {
-            if (String.IsNullOrEmpty(request.EmployeeName) == true)
+            if (String.IsNullOrEmpty(request.EmployeeName) == true || 
+                String.IsNullOrEmpty(request.EmployeeLocation) == true || 
+                String.IsNullOrEmpty(request.GrossSalary) == true)
             {
                 throw new Exception("Employee name cannot be empty");
             }

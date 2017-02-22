@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using cbc = PayCalculator.core.BusinessObjects.Employee;
+using cbc = PayCalculator.core.BusinessComponents.Employee;
 
-namespace PayCalculator.core.BusinessObjects.Test.Employee
+namespace PayCalculator.core.BusinessComponents.Test.Employee
 {
     [TestFixture]
     public class EmployeeShould

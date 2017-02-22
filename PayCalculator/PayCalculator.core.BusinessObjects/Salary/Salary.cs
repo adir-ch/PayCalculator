@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PayCalculator.core.BusinessObjects.Salary
+namespace PayCalculator.core.BusinessComponents.Salary
 {
     public class Salary : ISalary
     {

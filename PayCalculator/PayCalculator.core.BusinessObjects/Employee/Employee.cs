@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PayCalculator.core.BusinessObjects.Employee
+namespace PayCalculator.core.BusinessComponents.Employee
 {
     public class Employee : IEmployee
     {

@@ -56,9 +56,9 @@
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PayCalculator.core.BusinessObjects\PayCalculator.core.BusinessObjects.csproj">
+    <ProjectReference Include="..\PayCalculator.core.BusinessObjects\PayCalculator.core.BusinessComponents.csproj">
       <Project>{13de9634-2911-45bb-993a-c0d7fb12a759}</Project>
-      <Name>PayCalculator.core.BusinessObjects</Name>
+      <Name>PayCalculator.core.BusinessComponents</Name>
     </ProjectReference>
     <ProjectReference Include="..\PayCalculator\PayCalculator.core.Model\PayCalculator.core.Model.csproj">
       <Project>{9087c591-eeac-4254-a732-2a3ae134a1c6}</Project>

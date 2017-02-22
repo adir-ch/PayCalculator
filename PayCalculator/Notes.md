@@ -21,6 +21,8 @@ This document will be updated during my work.
 - Tests are implemented for business object only.
 - The test should cover the entire code, but since time is limited, tests are not implemented for the skeleton classes (such as fake DB or webapi).
 - I should have called BusinessObjects project BusinessComponents :-(
+- Setting the data in the contracts as is (not doing any conversion), in real life application it should be converted by the
+serializes / deserializers - which I do not implement here (for simplicity purpose).
 
 ### 3rd party ###
 
