@@ -1,9 +1,25 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayCalculator", "PayCalculator\PayCalculator.csproj", "{506B32ED-0FDE-49A6-B123-91FC1FB2BE4C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FakeInfra", "FakeInfra", "{1381FA43-04B0-4D30-A6C7-21962513B987}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayCalculator.Infra.WebApi", "PayCalculator\PayCalculator.Infra.WebApi\PayCalculator.Infra.WebApi.csproj", "{F5649313-B1EF-4829-ADC4-EDDBAAB92949}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayCalculator.Infra.IoC", "PayCalculator.Infra.IoC\PayCalculator.Infra.IoC.csproj", "{BFE06494-A556-40D0-AE91-749254731390}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayCalculator.Infra.DataAccess", "PayCalculator.Infra.DataAccess\PayCalculator.Infra.DataAccess.csproj", "{55EE4915-D5A8-4FDD-8B65-148CEE348CE7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{64199401-A934-47D9-9B4D-6E31722D4475}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Contracts", "Contracts", "{EE9E5EFA-A313-4F3A-AF51-A44107040FB7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayCalculator.core.Model", "PayCalculator.core.Model\PayCalculator.core.Model.csproj", "{9087C591-EEAC-4254-A732-2A3AE134A1C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayCalculator.Contracts", "PayCalculator.Contracts\PayCalculator.Contracts.csproj", "{0DB6C884-622A-4946-AD47-80BD819B860F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +31,35 @@ Global
 		{506B32ED-0FDE-49A6-B123-91FC1FB2BE4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{506B32ED-0FDE-49A6-B123-91FC1FB2BE4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{506B32ED-0FDE-49A6-B123-91FC1FB2BE4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5649313-B1EF-4829-ADC4-EDDBAAB92949}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5649313-B1EF-4829-ADC4-EDDBAAB92949}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5649313-B1EF-4829-ADC4-EDDBAAB92949}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5649313-B1EF-4829-ADC4-EDDBAAB92949}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFE06494-A556-40D0-AE91-749254731390}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFE06494-A556-40D0-AE91-749254731390}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFE06494-A556-40D0-AE91-749254731390}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFE06494-A556-40D0-AE91-749254731390}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55EE4915-D5A8-4FDD-8B65-148CEE348CE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55EE4915-D5A8-4FDD-8B65-148CEE348CE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55EE4915-D5A8-4FDD-8B65-148CEE348CE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55EE4915-D5A8-4FDD-8B65-148CEE348CE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9087C591-EEAC-4254-A732-2A3AE134A1C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9087C591-EEAC-4254-A732-2A3AE134A1C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9087C591-EEAC-4254-A732-2A3AE134A1C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9087C591-EEAC-4254-A732-2A3AE134A1C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DB6C884-622A-4946-AD47-80BD819B860F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DB6C884-622A-4946-AD47-80BD819B860F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DB6C884-622A-4946-AD47-80BD819B860F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DB6C884-622A-4946-AD47-80BD819B860F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F5649313-B1EF-4829-ADC4-EDDBAAB92949} = {1381FA43-04B0-4D30-A6C7-21962513B987}
+		{BFE06494-A556-40D0-AE91-749254731390} = {1381FA43-04B0-4D30-A6C7-21962513B987}
+		{55EE4915-D5A8-4FDD-8B65-148CEE348CE7} = {1381FA43-04B0-4D30-A6C7-21962513B987}
+		{9087C591-EEAC-4254-A732-2A3AE134A1C6} = {64199401-A934-47D9-9B4D-6E31722D4475}
+		{0DB6C884-622A-4946-AD47-80BD819B860F} = {EE9E5EFA-A313-4F3A-AF51-A44107040FB7}
 	EndGlobalSection
 EndGlobal

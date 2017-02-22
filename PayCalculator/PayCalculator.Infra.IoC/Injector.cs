@@ -12,7 +12,6 @@ namespace PayCalculator.Infra.IoC
     public class Injector
     {
         private static readonly Lazy<Injector> _instance = new Lazy<Injector>(() => new Injector());
-        //private static Injector _instance;
         private IUnityContainer _container;
 
         public static Injector Instance
