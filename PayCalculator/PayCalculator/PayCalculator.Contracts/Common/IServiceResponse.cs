@@ -13,6 +13,6 @@ namespace PayCalculator.Contracts.Common
         string Message { get; set; }
 
         string DumpResponseHeader();
-        string DumpResponseBody();
+        string DumpResponseBody(); 
     }
 }

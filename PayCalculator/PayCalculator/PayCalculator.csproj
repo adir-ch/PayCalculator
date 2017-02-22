@@ -72,19 +72,19 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PayCalculator.Contracts\PayCalculator.Contracts.csproj">
+    <ProjectReference Include="PayCalculator.Contracts\PayCalculator.Contracts.csproj">
       <Project>{0db6c884-622a-4946-ad47-80bd819b860f}</Project>
       <Name>PayCalculator.Contracts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PayCalculator.core.Model\PayCalculator.core.Model.csproj">
+    <ProjectReference Include="PayCalculator.core.Model\PayCalculator.core.Model.csproj">
       <Project>{9087c591-eeac-4254-a732-2a3ae134a1c6}</Project>
       <Name>PayCalculator.core.Model</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PayCalculator.Infra.DataAccess\PayCalculator.Infra.DataAccess.csproj">
+    <ProjectReference Include="PayCalculator.Infra.DataAccess\PayCalculator.Infra.DataAccess.csproj">
       <Project>{55ee4915-d5a8-4fdd-8b65-148cee348ce7}</Project>
       <Name>PayCalculator.Infra.DataAccess</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PayCalculator.Infra.IoC\PayCalculator.Infra.IoC.csproj">
+    <ProjectReference Include="PayCalculator.Infra.IoC\PayCalculator.Infra.IoC.csproj">
       <Project>{bfe06494-a556-40d0-ae91-749254731390}</Project>
       <Name>PayCalculator.Infra.IoC</Name>
     </ProjectReference>

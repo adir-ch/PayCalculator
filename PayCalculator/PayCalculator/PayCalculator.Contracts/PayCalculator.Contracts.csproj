@@ -41,6 +41,10 @@
   <ItemGroup>
     <Compile Include="Common\IServiceRequest.cs" />
     <Compile Include="Common\IServiceResponse.cs" />
+    <Compile Include="Common\ServiceErrorResponse.cs" />
+    <Compile Include="Common\ServiceRequestBase.cs" />
+    <Compile Include="Common\ServiceResponseBase.cs" />
+    <Compile Include="Common\ServiceSuccessResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

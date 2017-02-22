@@ -9,17 +9,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FakeInfra", "FakeInfra", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayCalculator.Infra.WebApi", "PayCalculator\PayCalculator.Infra.WebApi\PayCalculator.Infra.WebApi.csproj", "{F5649313-B1EF-4829-ADC4-EDDBAAB92949}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayCalculator.Infra.IoC", "PayCalculator.Infra.IoC\PayCalculator.Infra.IoC.csproj", "{BFE06494-A556-40D0-AE91-749254731390}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayCalculator.Infra.IoC", "PayCalculator\PayCalculator.Infra.IoC\PayCalculator.Infra.IoC.csproj", "{BFE06494-A556-40D0-AE91-749254731390}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayCalculator.Infra.DataAccess", "PayCalculator.Infra.DataAccess\PayCalculator.Infra.DataAccess.csproj", "{55EE4915-D5A8-4FDD-8B65-148CEE348CE7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayCalculator.Infra.DataAccess", "PayCalculator\PayCalculator.Infra.DataAccess\PayCalculator.Infra.DataAccess.csproj", "{55EE4915-D5A8-4FDD-8B65-148CEE348CE7}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{64199401-A934-47D9-9B4D-6E31722D4475}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "PayCalculator\Core", "{64199401-A934-47D9-9B4D-6E31722D4475}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Contracts", "Contracts", "{EE9E5EFA-A313-4F3A-AF51-A44107040FB7}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Contracts", "PayCalculator\Contracts", "{EE9E5EFA-A313-4F3A-AF51-A44107040FB7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayCalculator.core.Model", "PayCalculator.core.Model\PayCalculator.core.Model.csproj", "{9087C591-EEAC-4254-A732-2A3AE134A1C6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayCalculator.core.Model", "PayCalculator\PayCalculator.core.Model\PayCalculator.core.Model.csproj", "{9087C591-EEAC-4254-A732-2A3AE134A1C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayCalculator.Contracts", "PayCalculator.Contracts\PayCalculator.Contracts.csproj", "{0DB6C884-622A-4946-AD47-80BD819B860F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayCalculator.Contracts", "PayCalculator\PayCalculator.Contracts\PayCalculator.Contracts.csproj", "{0DB6C884-622A-4946-AD47-80BD819B860F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
