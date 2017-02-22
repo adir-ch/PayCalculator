@@ -12,6 +12,6 @@ namespace PayCalculator.core.BusinessObjects.Salary
         public decimal GrossSalary { get; set; }
         public decimal TaxableIncome { get; set; }
         public decimal NetAnnualSalary { get; set; }
-        public IList<string> Deductions { get; set; }
+        public IList<Tuple<string, decimal>> Deductions { get; set; }
     }
 }

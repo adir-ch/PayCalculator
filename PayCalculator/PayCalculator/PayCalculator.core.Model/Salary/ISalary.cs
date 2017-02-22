@@ -11,6 +11,6 @@ namespace PayCalculator.core.Model.Salary
         decimal GrossSalary { get; set; }
         decimal TaxableIncome { get; set; }
         decimal NetAnnualSalary { get; set; }
-        IList<string> Deductions { get; set; }
+        IList<Tuple<string, decimal>> Deductions { get; set; }
     }
 }

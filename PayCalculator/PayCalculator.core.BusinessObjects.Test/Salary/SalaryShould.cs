@@ -24,7 +24,7 @@ namespace PayCalculator.core.BusinessObjects.Test.Salary
             var deductionsList = new List<Tuple<string, decimal>>() { Tuple.Create<string, decimal>("a", (decimal)100),
                                                                       Tuple.Create<string, decimal>("b", (decimal)200),
                                                                       Tuple.Create<string, decimal>("c", (decimal)300)};
-
+            salary.Deductions = deductionsList; 
             Assert.AreEqual(salary.GrossSalary, grossSalary);
             Assert.AreEqual(salary.TaxableIncome, taxableIncome);
             Assert.AreEqual(salary.NetAnnualSalary, netAnuualSalary);
