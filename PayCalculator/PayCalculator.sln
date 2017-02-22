@@ -13,13 +13,23 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayCalculator.Infra.IoC", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayCalculator.Infra.DataAccess", "PayCalculator\PayCalculator.Infra.DataAccess\PayCalculator.Infra.DataAccess.csproj", "{55EE4915-D5A8-4FDD-8B65-148CEE348CE7}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "PayCalculator\Core", "{64199401-A934-47D9-9B4D-6E31722D4475}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{64199401-A934-47D9-9B4D-6E31722D4475}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Contracts", "PayCalculator\Contracts", "{EE9E5EFA-A313-4F3A-AF51-A44107040FB7}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Contracts", "Contracts", "{EE9E5EFA-A313-4F3A-AF51-A44107040FB7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayCalculator.core.Model", "PayCalculator\PayCalculator.core.Model\PayCalculator.core.Model.csproj", "{9087C591-EEAC-4254-A732-2A3AE134A1C6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayCalculator.Contracts", "PayCalculator\PayCalculator.Contracts\PayCalculator.Contracts.csproj", "{0DB6C884-622A-4946-AD47-80BD819B860F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayCalculator.core.BusinessObjects", "PayCalculator.core.BusinessObjects\PayCalculator.core.BusinessObjects.csproj", "{13DE9634-2911-45BB-993A-C0D7FB12A759}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{1BD89516-97A3-4A88-AE2B-A7FB1D16EFA1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{65A567C9-50D2-4326-BCE4-7BA6BA53FDC0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extensions", "Extensions", "{F15DB579-7131-4945-B55B-76D007E28DCE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayCalculator.core.BusinessObjects.Test", "PayCalculator.core.BusinessObjects.Test\PayCalculator.core.BusinessObjects.Test.csproj", "{8EDF4429-251A-416D-BB68-93F227191BCF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +61,14 @@ Global
 		{0DB6C884-622A-4946-AD47-80BD819B860F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DB6C884-622A-4946-AD47-80BD819B860F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DB6C884-622A-4946-AD47-80BD819B860F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13DE9634-2911-45BB-993A-C0D7FB12A759}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13DE9634-2911-45BB-993A-C0D7FB12A759}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13DE9634-2911-45BB-993A-C0D7FB12A759}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13DE9634-2911-45BB-993A-C0D7FB12A759}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EDF4429-251A-416D-BB68-93F227191BCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EDF4429-251A-416D-BB68-93F227191BCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EDF4429-251A-416D-BB68-93F227191BCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EDF4429-251A-416D-BB68-93F227191BCF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -61,5 +79,9 @@ Global
 		{55EE4915-D5A8-4FDD-8B65-148CEE348CE7} = {1381FA43-04B0-4D30-A6C7-21962513B987}
 		{9087C591-EEAC-4254-A732-2A3AE134A1C6} = {64199401-A934-47D9-9B4D-6E31722D4475}
 		{0DB6C884-622A-4946-AD47-80BD819B860F} = {EE9E5EFA-A313-4F3A-AF51-A44107040FB7}
+		{13DE9634-2911-45BB-993A-C0D7FB12A759} = {64199401-A934-47D9-9B4D-6E31722D4475}
+		{65A567C9-50D2-4326-BCE4-7BA6BA53FDC0} = {1BD89516-97A3-4A88-AE2B-A7FB1D16EFA1}
+		{F15DB579-7131-4945-B55B-76D007E28DCE} = {1BD89516-97A3-4A88-AE2B-A7FB1D16EFA1}
+		{8EDF4429-251A-416D-BB68-93F227191BCF} = {65A567C9-50D2-4326-BCE4-7BA6BA53FDC0}
 	EndGlobalSection
 EndGlobal

@@ -70,14 +70,14 @@ namespace PayCalculator
 
         private static void ReadDataFromConsole(out string employeeName, out string location, out string grossSalary)
         {
-            Console.Write("Employee name: ");
-            employeeName = Console.ReadLine();
+            //Console.Write("Employee name: ");
+            employeeName = "ADIR";  //Console.ReadLine();
 
-            Console.Write("Employee location: ");
-            location = Console.ReadLine();
+            //Console.Write("Employee location: ");
+            location = "Australia";  //Console.ReadLine();
 
-            Console.Write("Gross Salary: ");
-            grossSalary = Console.ReadLine();
+            //Console.Write("Gross Salary: ");
+            grossSalary = "200,000"; // Console.ReadLine();
         }
     }
 }
