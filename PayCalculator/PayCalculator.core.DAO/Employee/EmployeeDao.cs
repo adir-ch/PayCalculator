@@ -1,7 +1,7 @@
 ﻿using PayCalculator.core.DAO.Common;
 using PayCalculator.core.Model.Employee;
 using PayCalculator.Infra.IoC;
-using cbc = PayCalculator.core.BusinessComponents.Employee;
+using cbc = PayCalculator.core.BusinessObjects.Employee;
 
 namespace PayCalculator.core.DAO.Employee
 {

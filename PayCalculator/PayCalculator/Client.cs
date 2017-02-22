@@ -3,9 +3,6 @@ using PayCalculator.Contracts.Common;
 using PayCalculator.Contracts.Employee;
 using PayCalculator.Infra.WebApi;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace PayCalculator
 {
@@ -48,7 +45,7 @@ namespace PayCalculator
 
         private string formatResponse(IServiceResponse response)
         {
-            return String.Format("got response back: {0} | {1}", response.DumpResponseHeader(), response.DumpResponseBody());
+            return String.Format("got response back: {0}", response.DumpResponseHeader());
         }
         
         static void Main(string[] args)

@@ -39,10 +39,6 @@
       <HintPath>..\packages\log4net.2.0.7\lib\net45-full\log4net.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Microsoft.Practices.Unity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
       <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
       <Private>True</Private>
@@ -72,6 +68,22 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\PayCalculator.core.BusinessObjects.Test\PayCalculator.core.BusinessObjects.Test.csproj">
+      <Project>{8edf4429-251a-416d-bb68-93f227191bcf}</Project>
+      <Name>PayCalculator.core.BusinessObjects.Test</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PayCalculator.core.BusinessObjects\PayCalculator.core.BusinessObjects.csproj">
+      <Project>{13de9634-2911-45bb-993a-c0d7fb12a759}</Project>
+      <Name>PayCalculator.core.BusinessObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PayCalculator.core.BusinessServices\PayCalculator.core.BusinessServices.csproj">
+      <Project>{771e6362-16d5-468e-9b02-50e7ce42aa7a}</Project>
+      <Name>PayCalculator.core.BusinessServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PayCalculator.core.DAO\PayCalculator.core.DAO.csproj">
+      <Project>{af9750c7-e608-45d3-9699-572930c9b9f8}</Project>
+      <Name>PayCalculator.core.DAO</Name>
+    </ProjectReference>
     <ProjectReference Include="PayCalculator.Contracts\PayCalculator.Contracts.csproj">
       <Project>{0db6c884-622a-4946-ad47-80bd819b860f}</Project>
       <Name>PayCalculator.Contracts</Name>
