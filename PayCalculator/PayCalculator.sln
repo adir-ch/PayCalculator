@@ -31,6 +31,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extensions", "Extensions", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayCalculator.core.BusinessObjects.Test", "PayCalculator.core.BusinessObjects.Test\PayCalculator.core.BusinessObjects.Test.csproj", "{8EDF4429-251A-416D-BB68-93F227191BCF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayCalculator.core.BusinessServices", "PayCalculator.core.BusinessServices\PayCalculator.core.BusinessServices.csproj", "{771E6362-16D5-468E-9B02-50E7CE42AA7A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{8EDF4429-251A-416D-BB68-93F227191BCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8EDF4429-251A-416D-BB68-93F227191BCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8EDF4429-251A-416D-BB68-93F227191BCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{771E6362-16D5-468E-9B02-50E7CE42AA7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{771E6362-16D5-468E-9B02-50E7CE42AA7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{771E6362-16D5-468E-9B02-50E7CE42AA7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{771E6362-16D5-468E-9B02-50E7CE42AA7A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -83,5 +89,6 @@ Global
 		{65A567C9-50D2-4326-BCE4-7BA6BA53FDC0} = {1BD89516-97A3-4A88-AE2B-A7FB1D16EFA1}
 		{F15DB579-7131-4945-B55B-76D007E28DCE} = {1BD89516-97A3-4A88-AE2B-A7FB1D16EFA1}
 		{8EDF4429-251A-416D-BB68-93F227191BCF} = {65A567C9-50D2-4326-BCE4-7BA6BA53FDC0}
+		{771E6362-16D5-468E-9B02-50E7CE42AA7A} = {64199401-A934-47D9-9B4D-6E31722D4475}
 	EndGlobalSection
 EndGlobal
