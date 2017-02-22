@@ -12,8 +12,8 @@ namespace PayCalculator.core.BusinessObjects.Test.Employee
     public class EmployeeShould
     {
         [Test]
-        public void InitEmployeeObject([Values("Adir1", "Adir2")] string name, 
-                                       [Values("Australia", "NewZealand")] string location,
+        public void InitEmployeeObject([Values("Adir")] string name, 
+                                       [Values("Australia", "NewZealand", "France")] string location,
                                        [Values("200000", "-250000", "0")] string grossSalary)
         {
             cbc.Employee employee = new cbc.Employee();
@@ -21,7 +21,7 @@ namespace PayCalculator.core.BusinessObjects.Test.Employee
 
             Assert.AreEqual(employee.Name, name);
             Assert.AreEqual(employee.Location, location);
-            Assert.AreEqual(employee.Salary.GrossSalary , grossSalary);
+            Assert.AreEqual(employee.EmployeeSalary.GrossSalary.ToString() , grossSalary);
         }
     }
 }

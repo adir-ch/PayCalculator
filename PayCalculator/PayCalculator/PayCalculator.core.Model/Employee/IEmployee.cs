@@ -13,7 +13,7 @@ namespace PayCalculator.core.Model.Employee
 
         string Name { get; set; }
         string Location { get; set; }
-        ISalary Salary { get; set; }
+        ISalary EmployeeSalary { get; set; }
 
         void Init(string name, string location, string grossSalary);
         ISalary CalculateNetSalary();
