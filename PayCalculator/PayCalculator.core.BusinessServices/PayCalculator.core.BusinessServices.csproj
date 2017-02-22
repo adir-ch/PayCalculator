@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Common\BusinessServiceBase.cs" />
     <Compile Include="Employee\EmployeeAddService.cs" />
+    <Compile Include="Employee\EmployeeLookupService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

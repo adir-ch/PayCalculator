@@ -34,7 +34,7 @@ namespace PayCalculator.core.BusinessServices.Employee
                 String.IsNullOrEmpty(request.EmployeeLocation) == true || 
                 String.IsNullOrEmpty(request.GrossSalary) == true)
             {
-                throw new Exception("Employee name cannot be empty");
+                throw new Exception("Invalid request data");
             }
         }
 

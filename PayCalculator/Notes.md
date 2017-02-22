@@ -23,6 +23,8 @@ This document will be updated during my work.
 - I should have called BusinessObjects project BusinessComponents :-(
 - Setting the data in the contracts as is (not doing any conversion), in real life application it should be converted by the
 serializes / deserializers - which I do not implement here (for simplicity purpose).
+- Contract request / response validation should be done after deserialize (according to a schema). All data arriving to the server service should be already valid.
+- Didn't waste time on creating my own exception and used the .NET ones.
 
 ### 3rd party ###
 

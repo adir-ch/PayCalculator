@@ -3,6 +3,8 @@ using PayCalculator.Contracts.Common;
 using PayCalculator.Contracts.Employee;
 using PayCalculator.Infra.WebApi;
 using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace PayCalculator
 {
@@ -39,8 +41,51 @@ namespace PayCalculator
 
         public string PrintEmployeeSalaryReport(string employeeName)
         {
-            _log.DebugFormat("Generating salary report for employee: {0}", employeeName); 
-            return String.Empty; 
+            _log.DebugFormat("Generating salary report for employee: {0}", employeeName);
+            IServiceRequest employeeLookupRequest = new EmployeeLookupServiceRequest()
+            {
+                EmployeeName = employeeName
+            };
+
+            var employeeLookupResponse = PayCalculatorWebApi.Instance.CallService(employeeLookupRequest);
+            _log.InfoFormat(formatResponse(employeeLookupResponse));
+            return GenerateEmployeeSalaryReport(employeeLookupResponse as EmployeeLookupServiceResponse); 
+        }
+
+        private string GenerateEmployeeSalaryReport(EmployeeLookupServiceResponse response)
+        {
+            StringBuilder output = new StringBuilder();
+            output.Append(String.Format("Name: {0}{1}", response.EmployeeName, System.Environment.NewLine));
+            output.Append(String.Format("Employee location: {0}{1}", response.Location, System.Environment.NewLine));
+            output.Append(String.Format("Gross Salary: ${0}{1}", Math.Round(response.GrossSalary, 2).ToString("N2"), System.Environment.NewLine));
+            output.Append(System.Environment.NewLine);
+            output.Append(String.Format("Taxable Income: ${0:00}{1}", Math.Round(response.TaxableIncome, 2).ToString("N2"), System.Environment.NewLine));
+            output.Append(System.Environment.NewLine);
+            output.Append(String.Format("Deductions: {0}", System.Environment.NewLine));
+            output.Append(BuildSalaryReportDeductions(response.Deductions));
+            output.Append(System.Environment.NewLine);
+            output.Append(String.Format("Net annual salary: ${00:00}{1}", Math.Round(response.NetAnnualSalary, 2).ToString("N2"), System.Environment.NewLine));
+            return output.ToString();
+        }
+
+        private string BuildSalaryReportDeductions(IList<Tuple<string, decimal>> deductions)
+        {
+            StringBuilder output = new StringBuilder();
+            foreach (var deduction in deductions)
+            {
+                if (deduction.Item1 == "Superannuation")
+                {
+                    output.Append(String.Format("{0}: ${1:00}", deduction.Item1, deduction.Item2.ToString("N2")));
+                }
+                else
+                {
+                    output.Append(String.Format("{0}: ${1:00}", deduction.Item1, Math.Round(deduction.Item2).ToString("N2")));
+                }
+
+                output.Append(System.Environment.NewLine);
+            }
+
+            return output.ToString();
         }
 
         private string formatResponse(IServiceResponse response)
