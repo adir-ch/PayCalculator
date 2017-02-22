@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Practices.Unity;
+using System;
 using System.Threading;
 
 namespace PayCalculator.Infra.WebApi
@@ -6,6 +7,7 @@ namespace PayCalculator.Infra.WebApi
     public class PayCalculatorWebApi
     {
         private static readonly Lazy<PayCalculatorWebApi> _instance = new Lazy<PayCalculatorWebApi>(() => new PayCalculatorWebApi());
+        //private static PayCalculatorWebApi _instance;
         private readonly Injector _injector;
 
         public static PayCalculatorWebApi Instance
