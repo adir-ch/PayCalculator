@@ -48,6 +48,7 @@
     <Compile Include="Location\ILocationFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Salary\IDeductionRule.cs" />
+    <Compile Include="Salary\IDeductions.cs" />
     <Compile Include="Salary\ISalary.cs" />
     <Compile Include="Salary\ISalaryStrategy.cs" />
     <Compile Include="Tax\ITaxBracet.cs" />

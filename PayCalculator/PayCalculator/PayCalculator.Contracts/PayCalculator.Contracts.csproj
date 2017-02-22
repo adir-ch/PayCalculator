@@ -45,6 +45,12 @@
     <Compile Include="Common\ServiceRequestBase.cs" />
     <Compile Include="Common\ServiceResponseBase.cs" />
     <Compile Include="Common\ServiceSuccessResponse.cs" />
+    <Compile Include="Employee\EmployeeAddServiceRequest.cs" />
+    <Compile Include="Employee\EmployeeAddServiceResponse.cs" />
+    <Compile Include="Employee\EmployeeCalculateSalaryServiceRequest.cs" />
+    <Compile Include="Employee\EmployeeCalculateSalaryServiceResponse.cs" />
+    <Compile Include="Employee\EmployeeLookupServiceRequest.cs" />
+    <Compile Include="Employee\EmployeeLookupServiceResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

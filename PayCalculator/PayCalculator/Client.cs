@@ -1,4 +1,6 @@
 ﻿using log4net;
+using PayCalculator.Contracts.Common;
+using PayCalculator.Contracts.Employee;
 using PayCalculator.Infra.WebApi;
 using System;
 using System.Collections.Generic;
@@ -20,7 +22,16 @@ namespace PayCalculator
 
         public void AddNewEmployee(string employeeName, string location, string grossSalary)
         {
-            _log.DebugFormat("Adding new employee: {0}", employeeName); 
+            _log.DebugFormat("Adding new employee: {0}", employeeName);
+            IServiceRequest addEmployeeRequest = new EmployeeAddServiceRequest()
+            {
+                EmployeeName = employeeName,
+                EmployeeLocation = location,
+                GrossSalary = grossSalary
+            };
+
+            var addEmployeeResponse = PayCalculatorWebApi.Instance.CallService(addEmployeeRequest);
+            _log.Info(formatResponse(addEmployeeResponse));
         }
 
         public void CalculateEmployeeNetSalary(string employeeName)
@@ -35,6 +46,10 @@ namespace PayCalculator
             return String.Empty; 
         }
 
+        private string formatResponse(IServiceResponse response)
+        {
+            return String.Format("got response back: {0} | {1}", response.DumpResponseHeader(), response.DumpResponseBody());
+        }
         
         static void Main(string[] args)
         {
