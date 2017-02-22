@@ -21,7 +21,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayCalculator.core.Model", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayCalculator.Contracts", "PayCalculator\PayCalculator.Contracts\PayCalculator.Contracts.csproj", "{0DB6C884-622A-4946-AD47-80BD819B860F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayCalculator.core.BusinessComponents", "PayCalculator.core.BusinessObjects\PayCalculator.core.BusinessComponents.csproj", "{13DE9634-2911-45BB-993A-C0D7FB12A759}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayCalculator.core.BusinessObjects", "PayCalculator.core.BusinessObjects\PayCalculator.core.BusinessObjects.csproj", "{13DE9634-2911-45BB-993A-C0D7FB12A759}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{1BD89516-97A3-4A88-AE2B-A7FB1D16EFA1}"
 EndProject

@@ -44,7 +44,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PayCalculator.core.BusinessObjects\PayCalculator.core.BusinessComponents.csproj">
+    <ProjectReference Include="..\PayCalculator.core.BusinessObjects\PayCalculator.core.BusinessObjects.csproj">
       <Project>{13de9634-2911-45bb-993a-c0d7fb12a759}</Project>
       <Name>PayCalculator.core.BusinessComponents</Name>
     </ProjectReference>
