@@ -10,7 +10,7 @@ namespace PayCalculator.core.BusinessComponents.Salary
 
         public string GetRuleDescription()
         {
-            return String.Empty;
+            return "Default Core Tax rule"; 
         }
 
         public decimal Apply(decimal taxableIncome)

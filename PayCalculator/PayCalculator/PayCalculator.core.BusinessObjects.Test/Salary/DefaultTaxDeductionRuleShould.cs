@@ -20,16 +20,16 @@ namespace PayCalculator.core.BusinessObjects.Test.Salary
         }
 
         [Test]
-        public void ReturnEmpltyDescription()
+        public void NotReturnEmpltyDescription()
         {
             Assert.IsTrue(String.IsNullOrEmpty(_defaultTaxDeductionRule.GetRuleDescription()) == false);
         }
 
         [Test]
-        public void ReturnDefaultTaxDeductionRuleDescription()
+        public void ApplyRuleOnTaxableIncome([Values(200000)] decimal taxableIncome)
         {
-            // TODO: Add your test code here
-            Assert.Pass("Your first passing test");
+            var calculatedTax = _defaultTaxDeductionRule.Apply(taxableIncome);
+            Assert.AreEqual(calculatedTax, 55424); 
         }
     }
 }
