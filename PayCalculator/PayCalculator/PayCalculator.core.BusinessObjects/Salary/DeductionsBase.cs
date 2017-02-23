@@ -29,7 +29,7 @@ namespace PayCalculator.core.BusinessObjects.Salary
 
         public IList<Tuple<string, decimal>> GetDeductionsReport()
         {
-            throw new NotImplementedException();
+            return _deductionsReport;
         }
     }
 }
