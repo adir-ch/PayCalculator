@@ -20,6 +20,8 @@ namespace PayCalculator.core.BusinessObjects.Salary
             _deductionsReport = new List<Tuple<string, decimal>>(); 
         }
 
+        protected abstract void SetDeductionRules();
+
         public decimal GetTotalDeductionsAmount(decimal taxableIncome)
         {
             throw new NotImplementedException();

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace PayCalculator.core.BusinessObjects.Test.Salary
 {
     [TestFixture]
-    public class DeductionsBaseShould
+    public class DefaultCoreDeductionsShould
     {
         private DeductionsBase _deductionsBase;
 
