@@ -17,7 +17,13 @@ namespace PayCalculator.core.BusinessComponents.Tax
 
         public decimal CalculateTaxBracet(decimal taxableIncome)
         {
-            return 0;
+            if (taxableIncome < _lowerBand)
+                return 0;
+
+            if (taxableIncome > _upperBand)
+                return ((_upperBand - _lowerBand) * _taxRate);
+
+            return ((taxableIncome - _lowerBand) * _taxRate); 
         }
 
         public bool CanApplyBracet(decimal taxableIncome)
