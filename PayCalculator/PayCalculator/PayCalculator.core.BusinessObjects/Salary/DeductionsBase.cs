@@ -17,14 +17,28 @@ namespace PayCalculator.core.BusinessObjects.Salary
         public DeductionsBase()
         {
             _deductionRules = new List<IDeductionRule>();
-            _deductionsReport = new List<Tuple<string, decimal>>(); 
+            _deductionsReport = new List<Tuple<string, decimal>>();
+            SetDeductionRules();
         }
 
         protected abstract void SetDeductionRules();
 
         public decimal GetTotalDeductionsAmount(decimal taxableIncome)
         {
-            throw new NotImplementedException();
+            if (_deductionRules.Count() == 0)
+            {
+                return 0;
+            }
+
+            // decimal deductions = _deductionRules.Sum(r => r.Apply(taxableIncome)); 
+            foreach (var rule in _deductionRules)
+            {
+                _deductionsReport.Add(Tuple.Create<string, decimal>(rule.GetRuleDescription(), rule.Apply(taxableIncome)));
+            }
+
+            var totalDeductionsAmount = _deductionsReport.Sum(e => e.Item2);
+            _log.DebugFormat("Total deductions amount: {0}", totalDeductionsAmount);
+            return totalDeductionsAmount;
         }
 
         public IList<Tuple<string, decimal>> GetDeductionsReport()

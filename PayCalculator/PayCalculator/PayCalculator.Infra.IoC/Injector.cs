@@ -2,6 +2,7 @@
 using Microsoft.Practices.Unity.Configuration;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -24,16 +25,35 @@ namespace PayCalculator.Infra.IoC
             return _container.Resolve<T>(Name);
         }
 
-        public void Register(Type typeFrom, Type typeTo, string name = null)
+        //public void Register(Type typeFrom, Type typeTo, string name = null)
+        //{
+        //    _container.RegisterType(typeFrom, typeTo, name); 
+        //}
+
+        public void RegisterInstance<T>(T instance, string name)
         {
-            _container.RegisterType(typeFrom, typeTo, name); 
+            _container.RegisterInstance(name, instance);
+        }
+
+        public void RegisterType<TFrom, TTo>(string name = null) where TTo : TFrom
+        {
+            _container.RegisterType<TFrom, TTo>(name);
         }
 
         private Injector()
         {
             _container = new UnityContainer();
-            _container.LoadConfiguration();
+            TryLoadingConfigurationFile();
             ContainerAdditionalConfiguration();
+        }
+
+        private void TryLoadingConfigurationFile()
+        {
+            var configuration = (UnityConfigurationSection)ConfigurationManager.GetSection("unity");
+            if (configuration != null)
+            {
+                configuration.Configure(_container);
+            }
         }
 
         private void ContainerAdditionalConfiguration()
