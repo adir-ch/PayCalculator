@@ -5,6 +5,7 @@ This document will be updated during my work.
 ### Architecture and Design decisions ###
 
 - Architecture is aimed to present a typical enterprise application.
+- The main goal is to build an easily maintainable, extendable nd scalable application using SOLID design and coding principles.
 - The system structure will be built following the Domain Driven Design rich model principles (data is not separated from the logic).
 - The purpose is to first design a model, and build the application according to the common language that is presented in the model.
 - Each service is a standalone service that can be stored separately
