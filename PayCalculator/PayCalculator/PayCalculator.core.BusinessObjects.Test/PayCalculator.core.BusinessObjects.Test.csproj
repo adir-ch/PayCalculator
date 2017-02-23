@@ -52,6 +52,7 @@
     <Compile Include="Employee\EmployeeShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Salary\DefaultCoreDeductionsShould.cs" />
+    <Compile Include="Salary\DefaultTaxDeductionRuleShould.cs" />
     <Compile Include="Salary\SalaryShould.cs" />
   </ItemGroup>
   <ItemGroup>

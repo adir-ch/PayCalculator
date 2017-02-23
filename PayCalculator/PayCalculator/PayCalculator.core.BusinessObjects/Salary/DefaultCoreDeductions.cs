@@ -23,7 +23,7 @@ namespace PayCalculator.core.BusinessObjects.Salary
 
         private void AddDefaultTaxRule()
         {
-            
+            throw new NotImplementedException();
         }
     }
 }
