@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using PayCalculator.core.BusinessObjects.Salary;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +11,19 @@ namespace PayCalculator.core.BusinessObjects.Test.Salary
     [TestFixture]
     public class DefaultCoreSalaryStrategyShould
     {
-        [Test]
-        public void TestMethod()
+        private DefaultCoreSalaryStrategy _coreSalaryStragegy;
+
+        [OneTimeSetUp]
+        public void Init()
         {
-            // TODO: Add your test code here
-            Assert.Pass("Your first passing test");
+            _coreSalaryStragegy = new DefaultCoreSalaryStrategy();
+        }
+
+        [Test]
+        public void InitGrossSalary([Values(0, 5000)] decimal grossSalary)
+        {
+            _coreSalaryStragegy.GrossSalary = grossSalary;
+            Assert.AreEqual(_coreSalaryStragegy.GrossSalary, grossSalary); 
         }
     }
 }
