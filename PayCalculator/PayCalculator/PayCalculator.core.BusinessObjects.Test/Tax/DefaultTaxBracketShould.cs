@@ -13,6 +13,10 @@ namespace PayCalculator.core.BusinessObjects.Test.Tax
     {
         [Test]
         [TestCase(0, 100, 0.5, 50, ExpectedResult = true)]
+        [TestCase(0, 100, 0.5, 300, ExpectedResult = false)]
+        [TestCase(0, 100, 0.5, 0, ExpectedResult = true)]
+        [TestCase(0, 100, 0.5, 100, ExpectedResult = true)]
+        [TestCase(0, 100, 0.5, -10, ExpectedResult = false)]
         public bool CheckIfTaxableIncomeInTaxBracet(decimal lowerBand, decimal upperBand, decimal taxRate, decimal taxableIncome)
         {
             DefaultTaxBracket bracet = new DefaultTaxBracket(lowerBand, upperBand, taxRate);
