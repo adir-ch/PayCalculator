@@ -22,5 +22,16 @@ namespace PayCalculator.core.BusinessObjects.Test.Tax
             DefaultTaxBracket bracet = new DefaultTaxBracket(lowerBand, upperBand, taxRate);
             return bracet.IsInBracket(taxableIncome); 
         }
+
+        [Test]
+        [TestCase(0, 100, 0.5, 50, ExpectedResult = true)]
+        [TestCase(0, 100, 0.5, 300, ExpectedResult = true)]
+        [TestCase(0, 100, 0.5, 0, ExpectedResult = true)]
+        [TestCase(50, 100, 0.5, 10, ExpectedResult = false)]
+        public bool CheckIfBracetCanBeApplied(decimal lowerBand, decimal upperBand, decimal taxRate, decimal taxableIncome)
+        {
+            DefaultTaxBracket bracet = new DefaultTaxBracket(lowerBand, upperBand, taxRate);
+            return bracet.CanApplyBracet(taxableIncome);
+        }
     }
 }
