@@ -64,23 +64,25 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PayCalculator.core.BusinessObjects.Test\PayCalculator.core.BusinessObjects.Test.csproj">
+    <ProjectReference Include="PayCalculator.core.BusinessObjects.Test\PayCalculator.core.BusinessObjects.Test.csproj">
       <Project>{8edf4429-251a-416d-bb68-93f227191bcf}</Project>
       <Name>PayCalculator.core.BusinessObjects.Test</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PayCalculator.core.BusinessObjects\PayCalculator.core.BusinessObjects.csproj">
+    <ProjectReference Include="PayCalculator.core.BusinessObjects\PayCalculator.core.BusinessObjects.csproj">
       <Project>{13de9634-2911-45bb-993a-c0d7fb12a759}</Project>
       <Name>PayCalculator.core.BusinessObjects</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PayCalculator.core.BusinessServices\PayCalculator.core.BusinessServices.csproj">
+    <ProjectReference Include="PayCalculator.core.BusinessServices\PayCalculator.core.BusinessServices.csproj">
       <Project>{771e6362-16d5-468e-9b02-50e7ce42aa7a}</Project>
       <Name>PayCalculator.core.BusinessServices</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PayCalculator.core.DAO\PayCalculator.core.DAO.csproj">
+    <ProjectReference Include="PayCalculator.core.DAO\PayCalculator.core.DAO.csproj">
       <Project>{af9750c7-e608-45d3-9699-572930c9b9f8}</Project>
       <Name>PayCalculator.core.DAO</Name>
     </ProjectReference>

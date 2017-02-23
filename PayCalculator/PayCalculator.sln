@@ -21,7 +21,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayCalculator.core.Model", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayCalculator.Contracts", "PayCalculator\PayCalculator.Contracts\PayCalculator.Contracts.csproj", "{0DB6C884-622A-4946-AD47-80BD819B860F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayCalculator.core.BusinessObjects", "PayCalculator.core.BusinessObjects\PayCalculator.core.BusinessObjects.csproj", "{13DE9634-2911-45BB-993A-C0D7FB12A759}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayCalculator.core.BusinessObjects", "PayCalculator\PayCalculator.core.BusinessObjects\PayCalculator.core.BusinessObjects.csproj", "{13DE9634-2911-45BB-993A-C0D7FB12A759}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{1BD89516-97A3-4A88-AE2B-A7FB1D16EFA1}"
 EndProject
@@ -29,11 +29,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{65A567C9-5
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extensions", "Extensions", "{F15DB579-7131-4945-B55B-76D007E28DCE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayCalculator.core.BusinessObjects.Test", "PayCalculator.core.BusinessObjects.Test\PayCalculator.core.BusinessObjects.Test.csproj", "{8EDF4429-251A-416D-BB68-93F227191BCF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayCalculator.core.BusinessObjects.Test", "PayCalculator\PayCalculator.core.BusinessObjects.Test\PayCalculator.core.BusinessObjects.Test.csproj", "{8EDF4429-251A-416D-BB68-93F227191BCF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayCalculator.core.BusinessServices", "PayCalculator.core.BusinessServices\PayCalculator.core.BusinessServices.csproj", "{771E6362-16D5-468E-9B02-50E7CE42AA7A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayCalculator.core.BusinessServices", "PayCalculator\PayCalculator.core.BusinessServices\PayCalculator.core.BusinessServices.csproj", "{771E6362-16D5-468E-9B02-50E7CE42AA7A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayCalculator.core.DAO", "PayCalculator.core.DAO\PayCalculator.core.DAO.csproj", "{AF9750C7-E608-45D3-9699-572930C9B9F8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayCalculator.core.DAO", "PayCalculator\PayCalculator.core.DAO\PayCalculator.core.DAO.csproj", "{AF9750C7-E608-45D3-9699-572930C9B9F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

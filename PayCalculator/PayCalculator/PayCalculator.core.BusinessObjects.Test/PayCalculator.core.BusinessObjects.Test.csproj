@@ -34,12 +34,16 @@
       <HintPath>..\packages\Castle.Core.4.0.0\lib\net45\Castle.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="log4net, Version=2.0.7.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\log4net.2.0.7\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Moq, Version=4.7.0.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
       <HintPath>..\packages\Moq.4.7.0\lib\net45\Moq.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nunit.framework, Version=3.0.5813.39031, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
-      <HintPath>..\packages\NUnit.3.0.1\lib\net45\nunit.framework.dll</HintPath>
+    <Reference Include="nunit.framework, Version=3.6.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NUnit.3.6.0\lib\net45\nunit.framework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -60,7 +64,7 @@
       <Project>{13de9634-2911-45bb-993a-c0d7fb12a759}</Project>
       <Name>PayCalculator.core.BusinessComponents</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PayCalculator\PayCalculator.core.Model\PayCalculator.core.Model.csproj">
+    <ProjectReference Include="..\PayCalculator.core.Model\PayCalculator.core.Model.csproj">
       <Project>{9087c591-eeac-4254-a732-2a3ae134a1c6}</Project>
       <Name>PayCalculator.core.Model</Name>
     </ProjectReference>

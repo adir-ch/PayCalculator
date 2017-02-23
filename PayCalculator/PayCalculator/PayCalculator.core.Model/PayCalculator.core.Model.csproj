@@ -54,7 +54,6 @@
     <Compile Include="Tax\ITaxBracet.cs" />
     <Compile Include="Tax\ITaxCalculator.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\PayCalculator.Contracts\PayCalculator.Contracts.csproj">
       <Project>{0db6c884-622a-4946-ad47-80bd819b860f}</Project>
