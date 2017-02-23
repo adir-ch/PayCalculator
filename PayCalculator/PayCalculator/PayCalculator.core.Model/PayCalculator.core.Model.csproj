@@ -51,7 +51,7 @@
     <Compile Include="Salary\IDeductions.cs" />
     <Compile Include="Salary\ISalary.cs" />
     <Compile Include="Salary\ISalaryStrategy.cs" />
-    <Compile Include="Tax\ITaxBracet.cs" />
+    <Compile Include="Tax\ITaxBracket.cs" />
     <Compile Include="Tax\ITaxCalculator.cs" />
   </ItemGroup>
   <ItemGroup>

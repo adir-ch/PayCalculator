@@ -2,7 +2,7 @@
 
 namespace PayCalculator.core.BusinessComponents.Tax
 {
-    public class DefaultTaxBracket : ITaxBracet
+    public class DefaultTaxBracket : ITaxBracket
     {
         private readonly decimal _lowerBand;
         private readonly decimal _upperBand;
@@ -15,7 +15,7 @@ namespace PayCalculator.core.BusinessComponents.Tax
             _taxRate = taxRate;
         }
 
-        public decimal CalculateTaxBracet(decimal taxableIncome)
+        public decimal CalculateTaxBracket(decimal taxableIncome)
         {
             if (taxableIncome < _lowerBand)
                 return 0;
@@ -29,7 +29,7 @@ namespace PayCalculator.core.BusinessComponents.Tax
             return ((taxableIncome - _lowerBand + 1) * _taxRate); 
         }
 
-        public bool CanApplyBracet(decimal taxableIncome)
+        public bool CanApplyBracket(decimal taxableIncome)
         {
             return (taxableIncome >= _lowerBand);
         }

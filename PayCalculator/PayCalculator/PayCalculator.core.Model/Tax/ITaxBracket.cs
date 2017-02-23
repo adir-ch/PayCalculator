@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace PayCalculator.core.Model.Tax
 {
-    public interface ITaxBracet
+    public interface ITaxBracket
     {
-        bool CanApplyBracet(decimal taxableIncome);
-        decimal CalculateTaxBracet(decimal taxableIncome);
+        bool CanApplyBracket(decimal taxableIncome);
+        decimal CalculateTaxBracket(decimal taxableIncome);
     }
 }
