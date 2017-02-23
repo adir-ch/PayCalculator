@@ -65,6 +65,8 @@
     <Compile Include="Salary\DefaultCoreDeductions.cs" />
     <Compile Include="Salary\DefaultTaxDeductionRule.cs" />
     <Compile Include="Salary\Salary.cs" />
+    <Compile Include="Tax\DefaultTaxBracket.cs" />
+    <Compile Include="Tax\DefaultTaxCalculator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
