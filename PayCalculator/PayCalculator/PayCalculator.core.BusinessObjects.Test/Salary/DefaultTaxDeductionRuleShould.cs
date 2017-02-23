@@ -1,6 +1,6 @@
 ﻿using Moq;
 using NUnit.Framework;
-using PayCalculator.core.BusinessComponents.Salary;
+using PayCalculator.core.BusinessObjects.Salary;
 using PayCalculator.core.Model.Tax;
 using PayCalculator.Infra.IoC;
 using System;

@@ -3,7 +3,7 @@ using PayCalculator.core.Model.Tax;
 using PayCalculator.Infra.IoC;
 using System;
 
-namespace PayCalculator.core.BusinessComponents.Salary
+namespace PayCalculator.core.BusinessObjects.Salary
 {
     public class DefaultTaxDeductionRule : IDeductionRule
     {
@@ -22,7 +22,6 @@ namespace PayCalculator.core.BusinessComponents.Salary
 
         public decimal Apply(decimal taxableIncome)
         {
-            //ITaxCalculator calculator = Injector.Instance.Inject<ITaxCalculator>("DefaultTaxCalculator");
             return _taxCalculator.CalculateTax(taxableIncome); 
         }
     }
