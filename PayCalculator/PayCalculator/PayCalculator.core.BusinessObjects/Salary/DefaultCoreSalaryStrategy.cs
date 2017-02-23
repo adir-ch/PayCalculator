@@ -11,7 +11,12 @@ namespace PayCalculator.core.BusinessObjects.Salary
     {
         public decimal GrossSalary { get; set; }
         private IDeductions _deductions;
-        private ISalary _salary; 
+        private ISalary _salary;
+
+        public DefaultCoreSalaryStrategy(IDeductions deductions)
+        {
+            _deductions = deductions; 
+        }
 
         public ISalary Execute()
         {
