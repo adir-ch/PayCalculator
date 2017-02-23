@@ -15,13 +15,17 @@ namespace PayCalculator.core.BusinessObjects.Test.Salary
     public class DefaultTaxDeductionRuleShould
     {
         private DefaultTaxDeductionRule _defaultTaxDeductionRule;
-        private Mock<ITaxCalculator> _taxCalculatorMock; 
+        private Mock<ITaxCalculator> _taxCalculatorMock;
+        private Injector _injector; 
 
         [OneTimeSetUp]
         public void Init()
         {
-            _taxCalculatorMock = new Mock<ITaxCalculator>(); 
-            _defaultTaxDeductionRule = new DefaultTaxDeductionRule(_taxCalculatorMock.Object);
+            _taxCalculatorMock = new Mock<ITaxCalculator>();
+            _injector = Injector.Instance;
+            _injector.RegisterInstance<ITaxCalculator>(_taxCalculatorMock.Object, "DefaultTaxCalculator");
+
+            _defaultTaxDeductionRule = new DefaultTaxDeductionRule();
         }
 
         [Test]

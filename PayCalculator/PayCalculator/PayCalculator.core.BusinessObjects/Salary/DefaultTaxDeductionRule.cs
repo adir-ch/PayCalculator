@@ -10,11 +10,6 @@ namespace PayCalculator.core.BusinessObjects.Salary
         private ITaxCalculator _taxCalculator; 
         public string RuleName { get; set; }
 
-        public DefaultTaxDeductionRule(ITaxCalculator taxCalculator)
-        {
-            _taxCalculator = taxCalculator; 
-        }
-
         public string GetRuleDescription()
         {
             return "Default Core Tax rule"; 
@@ -22,7 +17,8 @@ namespace PayCalculator.core.BusinessObjects.Salary
 
         public decimal Apply(decimal taxableIncome)
         {
-            return _taxCalculator.CalculateTax(taxableIncome); 
+            ITaxCalculator taxCalculator = Injector.Instance.Inject<ITaxCalculator>("DefaultTaxCalculator");
+            return taxCalculator.CalculateTax(taxableIncome); 
         }
     }
 }
