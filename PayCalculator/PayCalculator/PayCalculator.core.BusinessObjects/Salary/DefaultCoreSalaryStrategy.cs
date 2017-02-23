@@ -10,10 +10,13 @@ namespace PayCalculator.core.BusinessObjects.Salary
     public class DefaultCoreSalaryStrategy : ISalaryStrategy
     {
         public decimal GrossSalary { get; set; }
+        private IDeductions _deductions;
+        private ISalary _salary; 
 
         public ISalary Execute()
         {
-            throw new NotImplementedException();
+            _salary = new Salary();
+            return _salary; 
         }
     }
 }
