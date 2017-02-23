@@ -1,6 +1,6 @@
 ﻿using PayCalculator.core.Model.Tax;
 
-namespace PayCalculator.core.BusinessComponents.Tax
+namespace PayCalculator.core.BusinessObjects.Tax
 {
     public class DefaultTaxBracket : ITaxBracket
     {

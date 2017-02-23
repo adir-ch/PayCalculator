@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace PayCalculator.core.BusinessComponents.Tax
+namespace PayCalculator.core.BusinessObjects.Tax
 {
     public class DefaultTaxCalculator : ITaxCalculator
     {

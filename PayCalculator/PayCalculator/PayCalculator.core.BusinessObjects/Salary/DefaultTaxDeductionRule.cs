@@ -1,5 +1,6 @@
 ﻿using PayCalculator.core.Model.Salary;
 using PayCalculator.core.Model.Tax;
+using PayCalculator.Infra.IoC;
 using System;
 
 namespace PayCalculator.core.BusinessComponents.Salary
@@ -15,7 +16,8 @@ namespace PayCalculator.core.BusinessComponents.Salary
 
         public decimal Apply(decimal taxableIncome)
         {
-            return 0; 
+            ITaxCalculator calculator = Injector.Instance.Inject<ITaxCalculator>("DefaultTaxCalculator");
+            return calculator.CalculateTax(taxableIncome); 
         }
     }
 }

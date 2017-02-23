@@ -1,5 +1,5 @@
 ﻿using NUnit.Framework;
-using PayCalculator.core.BusinessComponents.Tax;
+using PayCalculator.core.BusinessObjects.Tax;
 using System;
 using System.Collections.Generic;
 using System.Linq;
