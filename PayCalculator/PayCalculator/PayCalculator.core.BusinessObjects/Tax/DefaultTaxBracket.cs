@@ -22,7 +22,7 @@ namespace PayCalculator.core.BusinessComponents.Tax
 
         public bool CanApplyBracet(decimal taxableIncome)
         {
-            return false; 
+            return (taxableIncome >= _lowerBand);
         }
 
         public bool IsInBracket(decimal taxableIncome)
