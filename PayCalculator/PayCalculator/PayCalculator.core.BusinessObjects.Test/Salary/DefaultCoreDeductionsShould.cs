@@ -11,18 +11,18 @@ namespace PayCalculator.core.BusinessObjects.Test.Salary
     [TestFixture]
     public class DefaultCoreDeductionsShould
     {
-        private DeductionsBase _deductionsBase;
+        private DefaultCoreDeductions _deductions;
 
         [OneTimeSetUp]
         public void Init()
         {
-            _deductionsBase = new DeductionsBase(); 
+            _deductions = new DefaultCoreDeductions(); 
         }
 
         [Test]
         public void ReturnDeductionReport()
         {
-            Assert.IsNotEmpty(_deductionsBase.GetDeductionsReport());
+            Assert.IsNotEmpty(_deductions.GetDeductionsReport());
         }
     }
 }

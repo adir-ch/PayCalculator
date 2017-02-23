@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PayCalculator.core.BusinessObjects.Salary
 {
-    public class DeductionsBase : IDeductions
+    public abstract class DeductionsBase : IDeductions
     {
         protected readonly ILog _log = LogManager.GetLogger("Deductions");
         protected IList<IDeductionRule> _deductionRules;
