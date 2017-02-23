@@ -22,7 +22,7 @@ namespace PayCalculator.core.BusinessComponents.Tax
 
         public decimal CalculateTax(decimal taxableIncome)
         {
-            return 0; 
+            return _taxBracets.Sum(b => Math.Round(b.CalculateTaxBracket(taxableIncome)));
         }
 
         private void InitBracets(string description)
