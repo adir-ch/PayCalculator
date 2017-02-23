@@ -30,6 +30,7 @@ This document will be updated during my work.
 serializes / deserializers - which I do not implement here (for simplicity purpose).
 - Contract request / response validation should be done after deserialize (according to a schema). All data arriving to the server service should be already valid.
 - Didn't waste time on creating my own exception and used the .NET ones.
+- Abstract classes are tested through testing the derived classes.
 
 ### 3rd party ###
 

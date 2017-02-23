@@ -24,6 +24,11 @@ namespace PayCalculator.Infra.IoC
             return _container.Resolve<T>(Name);
         }
 
+        public void Register(Type typeFrom, Type typeTo, string name = null)
+        {
+            _container.RegisterType(typeFrom, typeTo, name); 
+        }
+
         private Injector()
         {
             _container = new UnityContainer();
