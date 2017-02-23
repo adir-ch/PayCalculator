@@ -66,7 +66,7 @@
   <ItemGroup>
     <ProjectReference Include="..\PayCalculator.core.BusinessObjects\PayCalculator.core.BusinessObjects.csproj">
       <Project>{13de9634-2911-45bb-993a-c0d7fb12a759}</Project>
-      <Name>PayCalculator.core.BusinessComponents</Name>
+      <Name>PayCalculator.core.BusinessObjects</Name>
     </ProjectReference>
     <ProjectReference Include="..\PayCalculator.core.Model\PayCalculator.core.Model.csproj">
       <Project>{9087c591-eeac-4254-a732-2a3ae134a1c6}</Project>

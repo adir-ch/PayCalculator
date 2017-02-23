@@ -5,9 +5,13 @@ This document will be updated during my work.
 ### Architecture and Design decisions ###
 
 - Architecture is aimed to present a typical enterprise application.
-- The system structure was build following the Domain Driven Design principles.
-- The purpose was to first design a model, and build the application according to the common language that is presented in the model.
+- The system structure will be built following the Domain Driven Design rich model principles (data is not separated from the logic).
+- The purpose is to first design a model, and build the application according to the common language that is presented in the model.
 - Each service is a standalone service that can be stored separately
+- Business services will not include business rules.
+- Business object contain the business logic and does not perform CRUD operations.
+- The business object will be created by a DAO object.
+
 
 ### General Coding notes ###
 
