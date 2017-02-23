@@ -1,5 +1,8 @@
-﻿using NUnit.Framework;
+﻿using Moq;
+using NUnit.Framework;
 using PayCalculator.core.BusinessComponents.Salary;
+using PayCalculator.core.Model.Tax;
+using PayCalculator.Infra.IoC;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,11 +15,13 @@ namespace PayCalculator.core.BusinessObjects.Test.Salary
     public class DefaultTaxDeductionRuleShould
     {
         private DefaultTaxDeductionRule _defaultTaxDeductionRule;
+        private Mock<ITaxCalculator> _taxCalculatorMock; 
 
         [OneTimeSetUp]
         public void Init()
         {
-            _defaultTaxDeductionRule = new DefaultTaxDeductionRule(); 
+            _taxCalculatorMock = new Mock<ITaxCalculator>(); 
+            _defaultTaxDeductionRule = new DefaultTaxDeductionRule(_taxCalculatorMock.Object);
         }
 
         [Test]
@@ -28,8 +33,9 @@ namespace PayCalculator.core.BusinessObjects.Test.Salary
         [Test]
         public void ApplyRuleOnTaxableIncome([Values(200000)] decimal taxableIncome)
         {
+            _taxCalculatorMock.Setup(f => f.CalculateTax(taxableIncome)).Returns(0); 
             var calculatedTax = _defaultTaxDeductionRule.Apply(taxableIncome);
-            Assert.AreEqual(calculatedTax, 55424); 
+            _taxCalculatorMock.Verify(calc => calc.CalculateTax(It.IsAny<decimal>()), Times.Once());
         }
     }
 }

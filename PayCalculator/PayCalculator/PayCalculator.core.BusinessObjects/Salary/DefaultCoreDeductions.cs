@@ -1,5 +1,6 @@
 ﻿using PayCalculator.core.BusinessObjects.Salary;
 using PayCalculator.core.Model.Salary;
+using PayCalculator.Infra.IoC;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +24,7 @@ namespace PayCalculator.core.BusinessObjects.Salary
 
         private void AddDefaultTaxRule()
         {
-            throw new NotImplementedException();
+            _deductionRules.Add(Injector.Instance.Inject<IDeductionRule>("DefaultTaxDeductionRule"));
         }
     }
 }
