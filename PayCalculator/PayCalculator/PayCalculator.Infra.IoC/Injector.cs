@@ -48,7 +48,8 @@ namespace PayCalculator.Infra.IoC
         }
 
         private void TryLoadingConfigurationFile()
-        {
+        {   
+            // needed for testing (since the section does not exist when running tests)
             var configuration = (UnityConfigurationSection)ConfigurationManager.GetSection("unity");
             if (configuration != null)
             {
