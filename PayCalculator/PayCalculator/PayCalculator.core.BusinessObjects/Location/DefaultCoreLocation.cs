@@ -12,7 +12,12 @@ namespace PayCalculator.core.BusinessObjects.Location
     public class DefaultCoreLocation : ILocation
     {
         public string LocationName { get; set; }
-
+        
+        public DefaultCoreLocation()
+        {
+            LocationName = "DefaultCoreLocation";
+        }
+        
         public ISalaryStrategy GetLocationSalaryStrategy()
         {
             var salaryStrategy = Injector.Instance.Inject<ISalaryStrategy>("DefaultCoreSalaryStrategy");
