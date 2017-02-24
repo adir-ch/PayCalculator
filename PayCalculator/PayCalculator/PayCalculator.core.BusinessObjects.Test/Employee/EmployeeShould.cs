@@ -19,7 +19,7 @@ namespace PayCalculator.core.BusinessObjects.Test.Employee
         private bc.Employee _employee;
         private DefaultCoreLocation _location; 
         private Mock<ILocationFactory> _locationFactoryMock;
-        private Mock<ISalaryStrategy> _defaultSalaryStrategyMock;
+        private Mock<ISalaryStrategy> _salaryStrategyMock;
         private Injector _injector; 
 
 
@@ -28,9 +28,9 @@ namespace PayCalculator.core.BusinessObjects.Test.Employee
         {
             _injector = Injector.Instance;
             _locationFactoryMock = new Mock<ILocationFactory>();
-            _defaultSalaryStrategyMock = new Mock<ISalaryStrategy>(); 
+            _salaryStrategyMock = new Mock<ISalaryStrategy>(); 
             _injector.RegisterInstance<ILocationFactory>(_locationFactoryMock.Object, "LocationFactory");
-            _injector.RegisterInstance<ISalaryStrategy>(_defaultSalaryStrategyMock.Object, "DefaultCoreSalaryStrategy");
+            _injector.RegisterInstance<ISalaryStrategy>(_salaryStrategyMock.Object, "DefaultCoreSalaryStrategy");
             _location = new DefaultCoreLocation(); 
             _employee = new bc.Employee(_locationFactoryMock.Object); 
         }
@@ -61,6 +61,16 @@ namespace PayCalculator.core.BusinessObjects.Test.Employee
             _locationFactoryMock.Setup(f => f.CreateLocation(It.IsAny<string>())).Returns(_location); 
             _employee.Init("Adir", "Australia", "200000");
             _locationFactoryMock.Verify(f => f.CreateLocation(It.IsAny<string>()), Times.Once());
+        }
+
+        [Test]
+        public void SetSalaryStrategyGrossSalary([Values("Adir")] string name, 
+                                                 [Values("Australia")] string location,
+                                                 [Values("200000", "0", "INCORRECT")] string grossSalary)
+        {
+            _locationFactoryMock.Setup(f => f.CreateLocation(It.IsAny<string>())).Returns(_location);
+            _employee.Init(name, location, grossSalary);
+            _salaryStrategyMock.Verify(f => f.GrossSalary.ToString() == grossSalary, Times.Once()); 
         }
     }
 }
