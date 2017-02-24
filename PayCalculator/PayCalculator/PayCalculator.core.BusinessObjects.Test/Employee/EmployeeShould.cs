@@ -65,11 +65,12 @@ namespace PayCalculator.core.BusinessObjects.Test.Employee
         [Test]
         public void SetSalaryStrategyGrossSalary([Values("Adir")] string name, 
                                                  [Values("Australia")] string location,
-                                                 [Values("200000", "0", "INCORRECT")] string grossSalary)
+                                                 [Values("200000", "0")] string grossSalary)
         {
             _locationFactoryMock.Setup(f => f.CreateLocation(It.IsAny<string>())).Returns(_location);
+            _salaryStrategyMock.SetupSet(st => st.GrossSalary=It.IsAny<decimal>()).Verifiable();
             _employee.Init(name, location, grossSalary);
-            _salaryStrategyMock.Verify(f => f.GrossSalary.ToString() == grossSalary, Times.Once()); 
+            _salaryStrategyMock.VerifySet(prop => prop.GrossSalary = It.IsAny<decimal>()); 
         }
     }
 }
