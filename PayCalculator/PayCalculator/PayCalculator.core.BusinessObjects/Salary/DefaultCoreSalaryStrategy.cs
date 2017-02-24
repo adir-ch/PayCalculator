@@ -21,6 +21,10 @@ namespace PayCalculator.core.BusinessObjects.Salary
         public ISalary Execute()
         {
             _salary = new Salary();
+            _salary.GrossSalary = GrossSalary;
+            _salary.TaxableIncome = GrossSalary;
+            _salary.NetAnnualSalary = GrossSalary - _deductions.GetTotalDeductionsAmount(_salary.TaxableIncome);
+            _salary.Deductions = _deductions.GetDeductionsReport();
             return _salary; 
         }
     }
