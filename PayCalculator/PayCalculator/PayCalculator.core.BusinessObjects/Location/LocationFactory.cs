@@ -11,7 +11,9 @@ namespace PayCalculator.core.BusinessObjects.Location
     {
         public ILocation CreateLocation(string locationName)
         {
-            return null; 
+            var location = new DefaultCoreLocation();
+            location.LocationName = locationName;
+            return location; 
         }
     }
 }
