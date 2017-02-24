@@ -62,5 +62,18 @@ namespace PayCalculator.core.BusinessObjects.Test.Salary
             Assert.AreEqual(salary.NetAnnualSalary, calculatedSalary.NetAnnualSalary);
             Assert.AreEqual(salary.Deductions, calculatedSalary.Deductions);
         }
+
+        [Test]
+        public void NotReturnNegativeNetAnnualSalary()
+        {
+            _coreSalaryStrategy.GrossSalary = 0;
+            decimal deductionsAmount = (decimal)600;
+            var deductionsList = new List<Tuple<string, decimal>>();
+            _deductionsMock.Setup(d => d.GetDeductionsReport()).Returns(deductionsList);
+            _deductionsMock.Setup(d => d.GetTotalDeductionsAmount(It.IsAny<decimal>())).Returns(deductionsAmount);
+
+            ISalary calculatedSalary = _coreSalaryStrategy.Execute();
+            Assert.GreaterOrEqual(calculatedSalary.NetAnnualSalary, 0);
+        }
     }
 }
