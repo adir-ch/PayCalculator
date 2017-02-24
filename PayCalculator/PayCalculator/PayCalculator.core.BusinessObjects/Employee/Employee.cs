@@ -36,7 +36,7 @@ namespace PayCalculator.core.BusinessObjects.Employee
 
         public ISalary CalculateNetSalary()
         {
-            throw new NotImplementedException();
+            return _salaryStrategy.Execute();
         }
 
         private void SetEmployeeSalaryStrategy(string grossSalary)

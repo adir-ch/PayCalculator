@@ -33,7 +33,9 @@ namespace PayCalculator.core.BusinessObjects.Test.Employee
             _injector.RegisterInstance<ILocationFactory>(_locationFactoryMock.Object, "LocationFactory");
             _injector.RegisterInstance<ISalaryStrategy>(_salaryStrategyMock.Object, "DefaultCoreSalaryStrategy");
             _location = new DefaultCoreLocation(); 
-            _employee = new bc.Employee(_locationFactoryMock.Object); 
+            _employee = new bc.Employee(_locationFactoryMock.Object);
+
+            _locationFactoryMock.Setup(f => f.CreateLocation(It.IsAny<string>())).Returns(_location);
         }
 
         [Test]
@@ -68,7 +70,6 @@ namespace PayCalculator.core.BusinessObjects.Test.Employee
                                                  [Values("Australia")] string location,
                                                  [Values("200000", "0")] string grossSalary)
         {
-            _locationFactoryMock.Setup(f => f.CreateLocation(It.IsAny<string>())).Returns(_location);
             _salaryStrategyMock.SetupSet(st => st.GrossSalary=It.IsAny<decimal>()).Verifiable();
             _employee.Init(name, location, grossSalary);
             _salaryStrategyMock.VerifySet(prop => prop.GrossSalary = It.IsAny<decimal>()); 
@@ -78,6 +79,7 @@ namespace PayCalculator.core.BusinessObjects.Test.Employee
         public void InvokeSalaryCalculationUponRequest()
         {
             _salaryStrategyMock.Setup(f => f.Execute()).Returns(new sbc.Salary());
+            _employee.Init("Adir", "Australia", "200000");
             _employee.CalculateNetSalary();
             _salaryStrategyMock.Verify(f => f.Execute(), Times.Once()); 
         }
