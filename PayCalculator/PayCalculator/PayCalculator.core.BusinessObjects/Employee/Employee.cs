@@ -41,8 +41,9 @@ namespace PayCalculator.core.BusinessObjects.Employee
 
         private void SetEmployeeSalaryStrategy(string grossSalary)
         {
-            // TODO: In the future, should be done via location microservice, that will return a strategy object (meanwhile - use factory)!
+            // TODO: In the future, maybe should be done via location microservice, that will return a strategy object (meanwhile - use factory)!
             _salaryStrategy = _locationFactory.CreateLocation(Location).GetLocationSalaryStrategy();
+            _salaryStrategy.GrossSalary = decimal.Parse(grossSalary);  // throw an exception when fail 
         }
     }
 }
