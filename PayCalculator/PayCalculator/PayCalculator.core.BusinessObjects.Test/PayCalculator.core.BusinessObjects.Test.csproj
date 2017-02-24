@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Employee\EmployeeShould.cs" />
+    <Compile Include="Location\DefaultCoreLocationShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Salary\DefaultCoreDeductionsShould.cs" />
     <Compile Include="Salary\DefaultCoreSalaryStrategyShould.cs" />
