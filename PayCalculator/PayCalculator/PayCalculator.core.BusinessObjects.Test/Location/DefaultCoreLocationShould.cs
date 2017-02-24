@@ -44,5 +44,12 @@ namespace PayCalculator.core.BusinessObjects.Test.Location
             var salaryStrategy = _defaultCoreLocation.GetLocationSalaryStrategy();
             Assert.IsInstanceOf<ISalaryStrategy>(salaryStrategy); 
         }
+
+        [Test]
+        public void ReturnDefaultCoreLocationName()
+        {
+            Assert.AreEqual(_defaultCoreLocation.LocationName, "DefaultCoreLocation");
+        }
+
     }
 }
