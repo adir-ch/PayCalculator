@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using bc = PayCalculator.core.BusinessObjects.Employee;
+using sbc = PayCalculator.core.BusinessObjects.Salary;
 
 namespace PayCalculator.core.BusinessObjects.Test.Employee
 {
@@ -71,6 +72,14 @@ namespace PayCalculator.core.BusinessObjects.Test.Employee
             _salaryStrategyMock.SetupSet(st => st.GrossSalary=It.IsAny<decimal>()).Verifiable();
             _employee.Init(name, location, grossSalary);
             _salaryStrategyMock.VerifySet(prop => prop.GrossSalary = It.IsAny<decimal>()); 
+        }
+
+        [Test]
+        public void InvokeSalaryCalculationUponRequest()
+        {
+            _salaryStrategyMock.Setup(f => f.Execute()).Returns(new sbc.Salary());
+            _employee.CalculateNetSalary();
+            _salaryStrategyMock.Verify(f => f.Execute(), Times.Once()); 
         }
     }
 }
