@@ -23,7 +23,15 @@ namespace PayCalculator.core.BusinessObjects.Test.Location
         public void CreateAndAddNewLocation([Values("location1", "location2")] string location)
         {
             var createdLocation = _locationFactory.CreateLocation(location);
-            Assert.AreEqual(location, createdLocation.LocationName);
+            Assert.AreEqual(createdLocation.LocationName, "DefaultCoreLocation");
+        }
+
+        [Test]
+        public void ReturnSameDefaultCoreLocationIfAlreadyCreated([Values("location1", "location2")] string location)
+        {
+            var createdLocation = _locationFactory.CreateLocation(location);
+            var existingLocation = _locationFactory.CreateLocation(location);
+            Assert.AreEqual(createdLocation, existingLocation);
         }
     }
 }
