@@ -36,7 +36,10 @@ namespace PayCalculator.core.BusinessObjects.Employee
 
         public ISalary CalculateNetSalary()
         {
-            return _salaryStrategy.Execute();
+            ISalary calculatedSalary = _salaryStrategy.Execute();
+            EmployeeSalary = calculatedSalary;
+            _log.DebugFormat("Calculated net salary for {0}: {1}", Name, calculatedSalary.NetAnnualSalary);
+            return calculatedSalary;
         }
 
         private void SetEmployeeSalaryStrategy(string grossSalary)
