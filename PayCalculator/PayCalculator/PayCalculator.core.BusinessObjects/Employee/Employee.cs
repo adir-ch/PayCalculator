@@ -34,7 +34,7 @@ namespace PayCalculator.core.BusinessObjects.Employee
             _log.DebugFormat("Init employee - Name: {0}, Location: {1}", Name, Location);
         }
 
-        public ISalary CalculateNetSalary()
+        public virtual ISalary CalculateNetSalary()
         {
             ISalary calculatedSalary = _salaryStrategy.Execute();
             EmployeeSalary = calculatedSalary;
