@@ -18,6 +18,7 @@ namespace PayCalculator.core.BusinessObjects.Employee
         public string Location { get; set; }
         public ISalary EmployeeSalary { get; set; }
         private ILocationFactory _locationFactory;
+        private ISalaryStrategy _salaryStrategy; 
 
         public Employee(ILocationFactory locationFactory)
         {
@@ -41,7 +42,7 @@ namespace PayCalculator.core.BusinessObjects.Employee
         private void SetEmployeeSalaryStrategy(string grossSalary)
         {
             // TODO: In the future, should be done via location microservice, that will return a strategy object (meanwhile - use factory)!
-            _locationFactory.CreateLocation(Location).GetLocationSalaryStrategy();
+            _salaryStrategy = _locationFactory.CreateLocation(Location).GetLocationSalaryStrategy();
         }
     }
 }

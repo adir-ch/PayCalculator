@@ -44,7 +44,6 @@ namespace PayCalculator.core.BusinessObjects.Test.Employee
 
             Assert.AreEqual(_employee.Name, name);
             Assert.AreEqual(_employee.Location, location);
-            Assert.AreEqual(_employee.EmployeeSalary.GrossSalary.ToString(), grossSalary);
         }
 
         [Test]
