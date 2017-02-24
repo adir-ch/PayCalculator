@@ -2,6 +2,7 @@
 using NUnit.Framework;
 using PayCalculator.core.BusinessObjects.Location;
 using PayCalculator.core.Model.Location;
+using PayCalculator.core.Model.Salary;
 using PayCalculator.Infra.IoC;
 using System;
 using System.Collections.Generic;
@@ -18,16 +19,20 @@ namespace PayCalculator.core.BusinessObjects.Test.Employee
         private bc.Employee _employee;
         private DefaultCoreLocation _location; 
         private Mock<ILocationFactory> _locationFactoryMock;
+        private Mock<ISalaryStrategy> _defaultSalaryStrategyMock;
         private Injector _injector; 
 
 
         [OneTimeSetUp]
         public void Init()
         {
-            _locationFactoryMock = new Mock<ILocationFactory>(); 
+            _injector = Injector.Instance;
+            _locationFactoryMock = new Mock<ILocationFactory>();
+            _defaultSalaryStrategyMock = new Mock<ISalaryStrategy>(); 
             _injector.RegisterInstance<ILocationFactory>(_locationFactoryMock.Object, "LocationFactory");
+            _injector.RegisterInstance<ISalaryStrategy>(_defaultSalaryStrategyMock.Object, "DefaultCoreSalaryStrategy");
             _location = new DefaultCoreLocation(); 
-            _employee = new bc.Employee(); 
+            _employee = new bc.Employee(_locationFactoryMock.Object); 
         }
 
         [Test]
