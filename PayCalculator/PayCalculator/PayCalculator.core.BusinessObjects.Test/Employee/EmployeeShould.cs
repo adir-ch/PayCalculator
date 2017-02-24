@@ -60,7 +60,6 @@ namespace PayCalculator.core.BusinessObjects.Test.Employee
         [Test]
         public void CallLocationFactoryToCreateSalaryStrategyOnInit()
         {
-            _locationFactoryMock.Setup(f => f.CreateLocation(It.IsAny<string>())).Returns(_location); 
             _employee.Init("Adir", "Australia", "200000");
             _locationFactoryMock.Verify(f => f.CreateLocation(It.IsAny<string>()), Times.Once());
         }
@@ -82,6 +81,16 @@ namespace PayCalculator.core.BusinessObjects.Test.Employee
             _employee.Init("Adir", "Australia", "200000");
             _employee.CalculateNetSalary();
             _salaryStrategyMock.Verify(f => f.Execute(), Times.Once()); 
+        }
+
+        [Test]
+        public void SetEmployeeSalaryPropertyAfterSalaryCalculation()
+        {
+            ISalary salaryObj = new sbc.Salary();
+            _salaryStrategyMock.Setup(f => f.Execute()).Returns(salaryObj);
+            _employee.Init("Adir", "Australia", "200000");
+            _employee.CalculateNetSalary();
+            Assert.AreEqual(_employee.EmployeeSalary, salaryObj);
         }
     }
 }
