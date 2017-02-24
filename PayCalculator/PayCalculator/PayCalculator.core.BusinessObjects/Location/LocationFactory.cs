@@ -9,9 +9,25 @@ namespace PayCalculator.core.BusinessObjects.Location
 {
     public class LocationFactory
     {
+        // implementing some kind of caching since location does not need to be 
+        // created every time (for a specific location name)
+        private IDictionary<string, ILocation> _locationsMap;
+
+        public LocationFactory()
+        {
+            _locationsMap = new Dictionary<string, ILocation>();
+        }
+
         public ILocation CreateLocation(string locationName)
         {
-            return new DefaultCoreLocation();
+            ILocation location;
+            if (_locationsMap.TryGetValue(locationName, out location) == false)
+            {
+                location = new DefaultCoreLocation();
+                _locationsMap.Add(locationName, location); // add for next time
+            }
+
+            return location; 
         }
     }
 }
