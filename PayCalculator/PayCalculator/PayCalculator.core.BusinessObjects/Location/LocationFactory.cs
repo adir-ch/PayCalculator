@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PayCalculator.core.BusinessObjects.Location
 {
-    public class LocationFactory
+    public class LocationFactory : ILocationFactory
     {
         // implementing some kind of caching since location does not need to be 
         // created every time (for a specific location name)
