@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using PayCalculator.core.BusinessObjects.Location;
+using PayCalculator.core.BusinessObjects.Salary;
 using PayCalculator.Infra.IoC;
 using System;
 using System.Collections.Generic;
@@ -29,6 +30,13 @@ namespace PayCalculator.core.BusinessObjects.Test.Location
             _defaultCoreLocation.LocationName = locationName;
 
             Assert.AreEqual(locationName, _defaultCoreLocation.LocationName);
+        }
+
+        [Test]
+        public void ReturnDefaultCoreLocationStrategy()
+        {
+            var salaryStrategy = _defaultCoreLocation.GetLocationSalaryStrategy();
+            Assert.IsInstanceOf<DefaultCoreSalaryStrategy>(salaryStrategy); 
         }
     }
 }
