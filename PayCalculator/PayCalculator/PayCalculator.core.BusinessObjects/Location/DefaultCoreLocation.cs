@@ -1,5 +1,6 @@
 ﻿using PayCalculator.core.Model.Location;
 using PayCalculator.core.Model.Salary;
+using PayCalculator.Infra.IoC;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,8 @@ namespace PayCalculator.core.BusinessObjects.Location
 
         public ISalaryStrategy GetLocationSalaryStrategy()
         {
-            throw new NotImplementedException();
+            var salaryStrategy = Injector.Instance.Inject<ISalaryStrategy>("DefaultCoreSalaryStrategy");
+            return salaryStrategy;
         }
     }
 }

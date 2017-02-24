@@ -1,6 +1,8 @@
-﻿using NUnit.Framework;
+﻿using Moq;
+using NUnit.Framework;
 using PayCalculator.core.BusinessObjects.Location;
 using PayCalculator.core.BusinessObjects.Salary;
+using PayCalculator.core.Model.Salary;
 using PayCalculator.Infra.IoC;
 using System;
 using System.Collections.Generic;
@@ -14,12 +16,16 @@ namespace PayCalculator.core.BusinessObjects.Test.Location
     public class DefaultCoreLocationShould
     {
         private DefaultCoreLocation _defaultCoreLocation;
+        private Mock<ISalaryStrategy> _salaryStrategyMock; 
         private Injector _injector; 
 
         [OneTimeSetUp]
         public void Init()
         {
+            _salaryStrategyMock = new Mock<ISalaryStrategy>(); 
             _injector = Injector.Instance;
+            _injector.RegisterInstance<ISalaryStrategy>(_salaryStrategyMock.Object, "DefaultCoreSalaryStrategy");
+
             _defaultCoreLocation = new DefaultCoreLocation(); 
         }
 
@@ -36,7 +42,7 @@ namespace PayCalculator.core.BusinessObjects.Test.Location
         public void ReturnDefaultCoreLocationStrategy()
         {
             var salaryStrategy = _defaultCoreLocation.GetLocationSalaryStrategy();
-            Assert.IsInstanceOf<DefaultCoreSalaryStrategy>(salaryStrategy); 
+            Assert.IsInstanceOf<ISalaryStrategy>(salaryStrategy); 
         }
     }
 }
