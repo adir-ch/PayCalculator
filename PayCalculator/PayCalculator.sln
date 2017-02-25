@@ -40,6 +40,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{C14C66
 		.nuget\packages.config = .nuget\packages.config
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extensions", "Extensions", "{49314DAF-9DAC-42A5-8BE5-657D0E8983C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayCalculator.Ext.BusinessObjects", "PayCalculator\PayCalculator.Ext.BusinessObjects\PayCalculator.Ext.BusinessObjects.csproj", "{17E30C74-AA0A-4EBD-8E03-32C34A0C1908}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayCalculator.Ext.BusinessObjects.Test", "PayCalculator\PayCalculator.Ext.BusinessObjects.Test\PayCalculator.Ext.BusinessObjects.Test.csproj", "{6AEC5061-6A59-4768-BCED-DBF10626ABDD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -86,6 +92,14 @@ Global
 		{AF9750C7-E608-45D3-9699-572930C9B9F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF9750C7-E608-45D3-9699-572930C9B9F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF9750C7-E608-45D3-9699-572930C9B9F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17E30C74-AA0A-4EBD-8E03-32C34A0C1908}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17E30C74-AA0A-4EBD-8E03-32C34A0C1908}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17E30C74-AA0A-4EBD-8E03-32C34A0C1908}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17E30C74-AA0A-4EBD-8E03-32C34A0C1908}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AEC5061-6A59-4768-BCED-DBF10626ABDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AEC5061-6A59-4768-BCED-DBF10626ABDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AEC5061-6A59-4768-BCED-DBF10626ABDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AEC5061-6A59-4768-BCED-DBF10626ABDD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -102,5 +116,7 @@ Global
 		{8EDF4429-251A-416D-BB68-93F227191BCF} = {65A567C9-50D2-4326-BCE4-7BA6BA53FDC0}
 		{771E6362-16D5-468E-9B02-50E7CE42AA7A} = {64199401-A934-47D9-9B4D-6E31722D4475}
 		{AF9750C7-E608-45D3-9699-572930C9B9F8} = {64199401-A934-47D9-9B4D-6E31722D4475}
+		{17E30C74-AA0A-4EBD-8E03-32C34A0C1908} = {49314DAF-9DAC-42A5-8BE5-657D0E8983C3}
+		{6AEC5061-6A59-4768-BCED-DBF10626ABDD} = {F15DB579-7131-4945-B55B-76D007E28DCE}
 	EndGlobalSection
 EndGlobal
