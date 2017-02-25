@@ -19,7 +19,6 @@ namespace PayCalculator.core.BusinessServices.Employee
         {
             _log.DebugFormat("Request to lookup employee: {0}", request.EmployeeName);
             _employee = _employeeDao.Get(request.EmployeeName);
-
             if (_employee == null)
             {
                 throw new Exception(String.Format("Unable to locate employee: {0}", request.EmployeeName));
@@ -41,10 +40,14 @@ namespace PayCalculator.core.BusinessServices.Employee
 
             response.EmployeeName = _employee.Name;
             response.Location = _employee.Location;
-            response.GrossSalary = _employee.EmployeeSalary.GrossSalary;
-            response.TaxableIncome = _employee.EmployeeSalary.TaxableIncome;
-            response.NetAnnualSalary = _employee.EmployeeSalary.NetAnnualSalary;
-            response.Deductions = _employee.EmployeeSalary.Deductions;
+
+            if(_employee.EmployeeSalary != null)
+            {
+                response.GrossSalary = _employee.EmployeeSalary.GrossSalary;
+                response.TaxableIncome = _employee.EmployeeSalary.TaxableIncome;
+                response.NetAnnualSalary = _employee.EmployeeSalary.NetAnnualSalary;
+                response.Deductions = _employee.EmployeeSalary.Deductions;
+            }
         }
     }
 }

@@ -18,6 +18,10 @@ namespace PayCalculator.Contracts.Employee
 
         public EmployeeLookupServiceResponse()
         {
+            GrossSalary = 0;
+            TaxableIncome = 0;
+            NetAnnualSalary = 0;
+            Deductions = null; 
         }
 
         public override string DumpResponseBody()

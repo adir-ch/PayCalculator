@@ -35,7 +35,14 @@ namespace PayCalculator
 
         public void CalculateEmployeeNetSalary(string employeeName)
         {
-            _log.DebugFormat("Calculating employee net annual salary: {0}", employeeName); 
+            _log.DebugFormat("Calculating employee net annual salary: {0}", employeeName);
+            IServiceRequest employeeCalcNetSalaryRequest = new EmployeeCalculateSalaryServiceRequest()
+            {
+                EmployeeName = employeeName,
+            };
+
+            var employeeCalcNetSalaryResponse = PayCalculatorWebApi.Instance.CallService(employeeCalcNetSalaryRequest);
+            _log.Info(formatResponse(employeeCalcNetSalaryResponse));
             
         }
 
@@ -57,14 +64,23 @@ namespace PayCalculator
             StringBuilder output = new StringBuilder();
             output.Append(String.Format("Name: {0}{1}", response.EmployeeName, System.Environment.NewLine));
             output.Append(String.Format("Employee location: {0}{1}", response.Location, System.Environment.NewLine));
-            output.Append(String.Format("Gross Salary: ${0}{1}", Math.Round(response.GrossSalary, 2).ToString("N2"), System.Environment.NewLine));
-            output.Append(System.Environment.NewLine);
-            output.Append(String.Format("Taxable Income: ${0:00}{1}", Math.Round(response.TaxableIncome, 2).ToString("N2"), System.Environment.NewLine));
-            output.Append(System.Environment.NewLine);
-            output.Append(String.Format("Deductions: {0}", System.Environment.NewLine));
-            output.Append(BuildSalaryReportDeductions(response.Deductions));
-            output.Append(System.Environment.NewLine);
-            output.Append(String.Format("Net annual salary: ${00:00}{1}", Math.Round(response.NetAnnualSalary, 2).ToString("N2"), System.Environment.NewLine));
+            
+            if(response.Deductions != null)
+            {
+                output.Append(String.Format("Gross Salary: ${0}{1}", Math.Round(response.GrossSalary, 2).ToString("N2"), System.Environment.NewLine));
+                output.Append(System.Environment.NewLine);
+                output.Append(String.Format("Taxable Income: ${0:00}{1}", Math.Round(response.TaxableIncome, 2).ToString("N2"), System.Environment.NewLine));
+                output.Append(System.Environment.NewLine);
+                output.Append(String.Format("Deductions: {0}", System.Environment.NewLine));
+                output.Append(BuildSalaryReportDeductions(response.Deductions));
+                output.Append(System.Environment.NewLine);
+                output.Append(String.Format("Net annual salary: ${00:00}{1}", Math.Round(response.NetAnnualSalary, 2).ToString("N2"), System.Environment.NewLine));
+            } 
+            else
+            {
+                output.Append("No salary data found - maybe first call calculate salary :)"); 
+            }
+            
             return output.ToString();
         }
 
