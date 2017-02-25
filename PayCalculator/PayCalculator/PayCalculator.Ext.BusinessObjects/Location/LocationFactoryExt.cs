@@ -10,7 +10,7 @@ namespace PayCalculator.Ext.BusinessObjects.Location
 {
     public class LocationFactoryExt : LocationFactory
     {
-        public override ILocation CreateLocation(string locationName)
+        protected override ILocation GenerateLocationObject(string locationName)
         {
             throw new NotImplementedException();
         }
