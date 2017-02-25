@@ -1,4 +1,5 @@
 ﻿using PayCalculator.core.Model.Salary;
+using PayCalculator.Infra.IoC;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,9 +14,10 @@ namespace PayCalculator.core.BusinessObjects.Salary
         private IDeductions _deductions;
         private ISalary _salary;
 
-        public DefaultCoreSalaryStrategy(IDeductions deductions)
+        public DefaultCoreSalaryStrategy()
         {
-            _deductions = deductions; 
+            // Each salary strategy will have it's own deductions - not using constructor injection
+            _deductions = Injector.Instance.Inject<IDeductions>("DefaultCoreDeductions"); 
         }
 
         public ISalary Execute()

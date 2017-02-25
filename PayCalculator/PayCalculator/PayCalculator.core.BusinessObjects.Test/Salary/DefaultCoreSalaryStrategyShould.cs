@@ -26,7 +26,7 @@ namespace PayCalculator.core.BusinessObjects.Test.Salary
             _deductionsMock = new Mock<IDeductions>();
             _injector = Injector.Instance;
             _injector.RegisterInstance<IDeductions>(_deductionsMock.Object, "DefaultCoreDeductions");
-            _coreSalaryStrategy = new DefaultCoreSalaryStrategy(_deductionsMock.Object);
+            _coreSalaryStrategy = new DefaultCoreSalaryStrategy();
         }
 
         [Test]
