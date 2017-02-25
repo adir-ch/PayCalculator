@@ -30,9 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="nunit.framework, Version=3.0.5813.39031, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\NUnit.3.0.1\lib\net45\nunit.framework.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="nunit.framework, Version=3.6.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\NUnit.3.6.0\lib\net45\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
   </ItemGroup>
@@ -41,11 +41,28 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Salary\" />
+    <Folder Include="Tax\" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Salary\" />
-    <Folder Include="Tax\" />
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PayCalculator.core.BusinessObjects\PayCalculator.core.BusinessObjects.csproj">
+      <Project>{13de9634-2911-45bb-993a-c0d7fb12a759}</Project>
+      <Name>PayCalculator.core.BusinessObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PayCalculator.core.Model\PayCalculator.core.Model.csproj">
+      <Project>{9087c591-eeac-4254-a732-2a3ae134a1c6}</Project>
+      <Name>PayCalculator.core.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PayCalculator.Ext.BusinessObjects\PayCalculator.Ext.BusinessObjects.csproj">
+      <Project>{17e30c74-aa0a-4ebd-8e03-32c34a0c1908}</Project>
+      <Name>PayCalculator.Ext.BusinessObjects</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
