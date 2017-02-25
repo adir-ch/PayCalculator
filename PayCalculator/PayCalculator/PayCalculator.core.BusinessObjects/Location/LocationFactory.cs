@@ -20,16 +20,34 @@ namespace PayCalculator.core.BusinessObjects.Location
 
         // created the function as virtual to have an extension point without overriding the 
         // entire class implementation, only the location creation method. 
-        public virtual ILocation CreateLocation(string locationName)
+        public ILocation CreateLocation(string locationName)
         {
-            ILocation location;
-            if (_locationsMap.TryGetValue(locationName, out location) == false)
+            ILocation location = RetriveExistingLocation(locationName);
+            if (location != null)
             {
-                location = new DefaultCoreLocation();
-                _locationsMap.Add(locationName, location); // add for next time
+                return location; 
             }
 
+            location = GenerateLocationObject(locationName);
+            AddCreatedLocation(locationName, location); 
             return location; 
+        }
+
+        private ILocation RetriveExistingLocation(string locationName)
+        {
+            ILocation location; 
+            _locationsMap.TryGetValue(locationName, out location);
+            return location; 
+        }
+
+        private void AddCreatedLocation(string locationName, ILocation locationObject)
+        {
+            _locationsMap.Add(locationName, locationObject); // add for next time
+        }
+
+        protected virtual ILocation GenerateLocationObject(string locationName)
+        {
+            return new DefaultCoreLocation();
         }
     }
 }
