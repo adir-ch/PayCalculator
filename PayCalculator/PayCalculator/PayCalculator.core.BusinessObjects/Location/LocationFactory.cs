@@ -18,7 +18,9 @@ namespace PayCalculator.core.BusinessObjects.Location
             _locationsMap = new Dictionary<string, ILocation>();
         }
 
-        public ILocation CreateLocation(string locationName)
+        // created the function as virtual to have an extension point without overriding the 
+        // entire class implementation, only the location creation method. 
+        public virtual ILocation CreateLocation(string locationName)
         {
             ILocation location;
             if (_locationsMap.TryGetValue(locationName, out location) == false)
