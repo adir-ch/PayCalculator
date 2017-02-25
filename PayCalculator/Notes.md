@@ -11,7 +11,9 @@ This document will be updated during my work.
 - Each service is a standalone service that can be stored separately
 - Business services will not include business rules.
 - Business object contain the business logic and does not perform CRUD operations.
-- The business object will be created by a DAO object.
+- The business object will be created by a DAO object (rich model).
+- All the application's components can be extended (business behavior, services and DOA's).
+- The different locations salary calculation was done as part of the application's extensions.
 
 
 ### General Coding notes ###
