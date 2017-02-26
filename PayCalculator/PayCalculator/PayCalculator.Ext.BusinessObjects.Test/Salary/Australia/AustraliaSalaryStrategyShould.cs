@@ -1,17 +1,14 @@
 ﻿using Moq;
 using NUnit.Framework;
 using PayCalculator.core.Model.Salary;
-using PayCalculator.Ext.BusinessObjects.Salary;
-using bc = PayCalculator.core.BusinessObjects.Salary;
+using PayCalculator.Ext.BusinessObjects.Salary.Australia;
+using PayCalculator.Ext.Model.Salary;
 using PayCalculator.Infra.IoC;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PayCalculator.Ext.Model.Salary;
+using bc = PayCalculator.core.BusinessObjects.Salary;
 
-namespace PayCalculator.Ext.BusinessObjects.Test.Salary
+namespace PayCalculator.Ext.BusinessObjects.Test.Salary.Australia
 {
     [TestFixture(0)]
     [TestFixture(1000)]

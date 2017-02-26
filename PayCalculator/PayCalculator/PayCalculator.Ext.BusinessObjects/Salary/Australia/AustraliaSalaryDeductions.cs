@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PayCalculator.Ext.BusinessObjects.Salary
+namespace PayCalculator.Ext.BusinessObjects.Salary.Australia
 {
     // The class is a derived of DeductionBase and implements the abstract methods
     // The class also implements the IAustraliaSalaryDeductions to enable construction

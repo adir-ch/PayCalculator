@@ -40,8 +40,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Location\AustraliaLocation.cs" />
-    <Compile Include="Salary\AustraliaSalaryDeductions.cs" />
-    <Compile Include="Salary\AustraliaSalaryStrategy.cs" />
+    <Compile Include="Salary\Australia\AustraliaSalaryDeductions.cs" />
+    <Compile Include="Salary\Australia\AustraliaSalaryStrategy.cs" />
     <Compile Include="Location\GermanyLocation.cs" />
     <Compile Include="Location\LocationFactoryExt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
