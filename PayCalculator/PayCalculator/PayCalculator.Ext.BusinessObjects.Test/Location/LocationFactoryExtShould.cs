@@ -1,7 +1,9 @@
-﻿using NUnit.Framework;
+﻿using Moq;
+using NUnit.Framework;
 using PayCalculator.core.BusinessObjects.Location;
 using PayCalculator.core.Model.Location;
 using PayCalculator.Ext.BusinessObjects.Location;
+using PayCalculator.Infra.IoC;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,18 +16,33 @@ namespace PayCalculator.Ext.BusinessObjects.Test.Location
     public class LocationFactoryExtShould
     {
         private LocationFactoryExt _locationFactory;
+        private Mock<ILocation> _specificLocation;
+        private Injector _injector; 
 
         [OneTimeSetUp]
         public void Init()
         {
+            _specificLocation = new Mock<ILocation>();
+            _injector = Injector.Instance; 
             _locationFactory = new LocationFactoryExt();
         }
 
+        [SetUp] 
+        public void BeforeEach()
+        {
+            _injector.RegisterInstance<ILocation>(new AustraliaLocation(), "AustraliaLocation");
+            _injector.RegisterInstance<ILocation>(new GermanyLocation(), "GermanyLocation");
+            _injector.RegisterInstance<ILocation>(new DefaultCoreLocation(), "DefaultCoreLocation");
+        }
+
         [Test]
-        public void CreateAndAddNewLocation([Values("Australia", "Germany", "USA")] string location)
+        [TestCase("Australia", ExpectedResult = "Australia")]
+        [TestCase("Germany", ExpectedResult = "Germany")]
+        [TestCase("USA", ExpectedResult = "DefaultCoreLocation")]
+        public string CreateAndAddNewLocation(string location)
         {
             var createdLocation = _locationFactory.CreateLocation(location);
-            Assert.AreEqual(createdLocation.LocationName, "DefaultCoreLocation");
+            return createdLocation.LocationName;
         }
 
         [Test]
@@ -42,6 +59,8 @@ namespace PayCalculator.Ext.BusinessObjects.Test.Location
         [TestCase("USA", typeof(DefaultCoreLocation))]
         public void ReturnSpecificLocationInstance(string location, Type instanceType)
         {
+            
+
             var createdObject = _locationFactory.CreateLocation(location);
             Assert.AreEqual(instanceType, createdObject.GetType());
         }
