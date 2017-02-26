@@ -12,6 +12,11 @@ namespace PayCalculator.Ext.BusinessObjects.Location
     {
         public string LocationName { get; set; }
 
+        public GermanyLocation()
+        {
+            LocationName = "Germany";  // take the value for DB
+        }
+
         public ISalaryStrategy GetLocationSalaryStrategy()
         {
             throw new NotImplementedException();

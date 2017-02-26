@@ -14,7 +14,7 @@ namespace PayCalculator.Ext.BusinessObjects.Location
 
         public AustraliaLocation()
         {
-            LocationName = "Australia"; 
+            LocationName = "Australia"; // take the value for DB
         }
 
         public ISalaryStrategy GetLocationSalaryStrategy()

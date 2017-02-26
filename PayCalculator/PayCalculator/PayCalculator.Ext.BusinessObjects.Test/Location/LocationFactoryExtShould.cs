@@ -59,8 +59,6 @@ namespace PayCalculator.Ext.BusinessObjects.Test.Location
         [TestCase("USA", typeof(DefaultCoreLocation))]
         public void ReturnSpecificLocationInstance(string location, Type instanceType)
         {
-            
-
             var createdObject = _locationFactory.CreateLocation(location);
             Assert.AreEqual(instanceType, createdObject.GetType());
         }
