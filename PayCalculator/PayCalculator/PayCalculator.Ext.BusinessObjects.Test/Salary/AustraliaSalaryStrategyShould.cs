@@ -44,7 +44,7 @@ namespace PayCalculator.Ext.BusinessObjects.Test.Salary
             _salary = new bc.Salary();
             _salary.GrossSalary = _initialGrossSalary;
 
-            decimal super = _salary.GrossSalary - (_salary.GrossSalary * (decimal)0.086758);
+            decimal super = (_salary.GrossSalary * (decimal)0.086758);
             _salary.TaxableIncome = _salary.GrossSalary - super;
 
             decimal deductionsAmount = (decimal)600;
