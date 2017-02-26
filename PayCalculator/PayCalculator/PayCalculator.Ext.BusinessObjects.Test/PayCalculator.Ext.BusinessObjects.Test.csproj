@@ -48,9 +48,9 @@
     <Compile Include="Location\AustraliaLocationShould.cs" />
     <Compile Include="Location\LocationFactoryExtShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Salary\AustraliaSalaryStrategyShould.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Salary\" />
     <Folder Include="Tax\" />
   </ItemGroup>
   <ItemGroup>
