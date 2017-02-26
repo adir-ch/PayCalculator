@@ -19,13 +19,20 @@ namespace PayCalculator.core.BusinessObjects.Test.Salary
     public class DefaultCoreDeductionsShould
     {
         private AustraliaSalaryDeductions _deductions;
+        private Mock<IDeductionRule> _deductionRuleMock; 
         private Injector _injector;
 
         [OneTimeSetUp]
         public void Init()
         {
+            _deductionRuleMock = new Mock<IDeductionRule>(); 
             _injector = Injector.Instance;
-            _deductions = new AustraliaSalaryDeductions(); 
+            _injector.RegisterInstance<IDeductionRule>(_deductionRuleMock.Object, "IncomTaxDeductionRule");
+            _injector.RegisterInstance<IDeductionRule>(_deductionRuleMock.Object, "MedicareLevyDeductionRule");
+            _injector.RegisterInstance<IDeductionRule>(_deductionRuleMock.Object, "BudgetRepairTaxDeductionRule");
+            _deductions = new AustraliaSalaryDeductions();
+
+            _deductionRuleMock.Setup(rule => rule.Apply(It.IsAny<decimal>())).Returns(100);
         }
 
         [Test]
