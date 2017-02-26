@@ -32,7 +32,12 @@ namespace PayCalculator.Ext.BusinessObjects.Salary
             salary.GrossSalary = GrossSalary;
             salary.TaxableIncome = taxableIncome;
             salary.NetAnnualSalary = netAnnualSalary;
-            salary.Deductions = _deductions.GetDeductionsReport();         
+            salary.Deductions = _deductions.GetDeductionsReport();
+
+            // Adding Superannuation to the report, since the requierments states that the deductions report
+            // should contain the super entry, but the code is using the deduction report to calculate the amount 
+            // needed for net annual - adding the super after the report was used. 
+            salary.Deductions.Insert(0, Tuple.Create<string, decimal>("Superannuation", superannuation));
             return salary; 
         }
 
