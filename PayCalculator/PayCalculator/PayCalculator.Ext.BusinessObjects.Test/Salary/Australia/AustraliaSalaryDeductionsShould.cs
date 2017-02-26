@@ -30,9 +30,13 @@ namespace PayCalculator.core.BusinessObjects.Test.Salary
             _injector.RegisterInstance<IDeductionRule>(_deductionRuleMock.Object, "IncomTaxDeductionRule");
             _injector.RegisterInstance<IDeductionRule>(_deductionRuleMock.Object, "MedicareLevyDeductionRule");
             _injector.RegisterInstance<IDeductionRule>(_deductionRuleMock.Object, "BudgetRepairTaxDeductionRule");
-            _deductions = new AustraliaSalaryDeductions();
-
             _deductionRuleMock.Setup(rule => rule.Apply(It.IsAny<decimal>())).Returns(100);
+        }
+
+        [SetUp]
+        public void BeforeEach()
+        {
+            _deductions = new AustraliaSalaryDeductions();
         }
 
         [Test]
@@ -41,6 +45,7 @@ namespace PayCalculator.core.BusinessObjects.Test.Salary
             var deductionsAmount = _deductions.GetTotalDeductionsAmount(taxableIncome);
             var deductionsReport = _deductions.GetDeductionsReport();
             Assert.That(deductionsReport, Is.Not.Empty);
+            Assert.That(deductionsReport.Count(), Is.EqualTo(3));
         }
     }
 }
