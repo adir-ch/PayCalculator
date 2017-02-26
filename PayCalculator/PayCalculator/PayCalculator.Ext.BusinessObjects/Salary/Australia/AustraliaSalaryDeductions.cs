@@ -12,7 +12,7 @@ namespace PayCalculator.Ext.BusinessObjects.Salary.Australia
     // The class also implements the IAustraliaSalaryDeductions to enable construction
     // injection when building the AustraliaSalaryStrategy class (if it was only IDeduction
     // type, it could have been constructor injected). 
-    class AustraliaSalaryDeductions : DeductionsBase, IAustraliaSalaryDeductions
+    public class AustraliaSalaryDeductions : DeductionsBase, IAustraliaSalaryDeductions
     {
         protected override void SetDeductionRules()
         {
