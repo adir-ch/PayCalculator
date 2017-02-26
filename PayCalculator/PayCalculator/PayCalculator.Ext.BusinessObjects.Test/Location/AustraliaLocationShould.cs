@@ -26,6 +26,8 @@ namespace PayCalculator.Ext.BusinessObjects.Test.Location
             _injector.RegisterInstance<ISalaryStrategy>(_salaryStrategyMock.Object, "AustraliaSalaryStrategy");
 
             _australiaLocation = new AustraliaLocation();
+            string locationName = "Australia";
+            _australiaLocation.LocationName = locationName;
         }
 
         [Test]
@@ -33,8 +35,14 @@ namespace PayCalculator.Ext.BusinessObjects.Test.Location
         {
             string locationName = "Australia";
             _australiaLocation.LocationName = locationName;
-
             Assert.AreEqual(locationName, _australiaLocation.LocationName);
+        }
+
+        [Test]
+        public void ReturnAustraliasSalaryStrategy()
+        {
+            var salaryStrategy = _australiaLocation.GetLocationSalaryStrategy();
+            Assert.That(salaryStrategy, Is.TypeOf(typeof(AustraliaSalaryStrategy)));
         }
     }
 }
