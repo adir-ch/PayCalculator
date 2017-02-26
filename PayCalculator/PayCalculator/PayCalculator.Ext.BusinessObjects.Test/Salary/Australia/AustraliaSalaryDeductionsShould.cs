@@ -27,5 +27,13 @@ namespace PayCalculator.core.BusinessObjects.Test.Salary
             _injector = Injector.Instance;
             _deductions = new AustraliaSalaryDeductions(); 
         }
+
+        [Test]
+        public void ContainListOfDeductionRules([Values(0, 1000, 5000)] decimal taxableIncome)
+        {
+            var deductionsAmount = _deductions.GetTotalDeductionsAmount(taxableIncome);
+            var deductionsReport = _deductions.GetDeductionsReport();
+            Assert.That(deductionsReport, Is.Not.Empty);
+        }
     }
 }
