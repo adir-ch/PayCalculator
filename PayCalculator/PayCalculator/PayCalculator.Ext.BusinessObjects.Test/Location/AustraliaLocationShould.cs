@@ -42,7 +42,7 @@ namespace PayCalculator.Ext.BusinessObjects.Test.Location
         public void ReturnAustraliasSalaryStrategy()
         {
             var salaryStrategy = _australiaLocation.GetLocationSalaryStrategy();
-            Assert.That(salaryStrategy, Is.TypeOf(typeof(AustraliaSalaryStrategy)));
+            Assert.AreEqual(salaryStrategy, _salaryStrategyMock.Object);
         }
     }
 }
