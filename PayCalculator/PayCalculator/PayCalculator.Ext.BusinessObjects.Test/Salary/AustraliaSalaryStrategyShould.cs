@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PayCalculator.Ext.Model.Salary;
 
 namespace PayCalculator.Ext.BusinessObjects.Test.Salary
 {
@@ -19,7 +20,7 @@ namespace PayCalculator.Ext.BusinessObjects.Test.Salary
     {
         private decimal _initialGrossSalary; 
         private AustraliaSalaryStrategy _australiaSalaryStrategy;
-        private Mock<IDeductions> _deductionsMock;
+        private Mock<IAustraliaSalaryDeductions> _deductionsMock;
         private Injector _injector;
         private ISalary _salary;
 
@@ -31,10 +32,10 @@ namespace PayCalculator.Ext.BusinessObjects.Test.Salary
         [OneTimeSetUp]
         public void Init()
         {
-            _deductionsMock = new Mock<IDeductions>();
+            _deductionsMock = new Mock<IAustraliaSalaryDeductions>();
             _injector = Injector.Instance;
             _injector.RegisterInstance<IDeductions>(_deductionsMock.Object, "AustraliaSalaryDeductions");
-            _australiaSalaryStrategy = new AustraliaSalaryStrategy();
+            _australiaSalaryStrategy = new AustraliaSalaryStrategy(_deductionsMock.Object);
         }
 
         [SetUp]

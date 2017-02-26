@@ -72,6 +72,10 @@
       <Project>{17e30c74-aa0a-4ebd-8e03-32c34a0c1908}</Project>
       <Name>PayCalculator.Ext.BusinessObjects</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PayCalculator.Ext.Model\PayCalculator.Ext.Model.csproj">
+      <Project>{d20856e3-edc3-4682-bee5-b657d41a7a1a}</Project>
+      <Name>PayCalculator.Ext.Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PayCalculator.Infra.IoC\PayCalculator.Infra.IoC.csproj">
       <Project>{bfe06494-a556-40d0-ae91-749254731390}</Project>
       <Name>PayCalculator.Infra.IoC</Name>

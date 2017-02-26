@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PayCalculator.Ext.Model.Salary
 {
-    interface IAustraliaDeductions : IDeductions
+    public interface IAustraliaSalaryDeductions : IDeductions
     {
     }
 }

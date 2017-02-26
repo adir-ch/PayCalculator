@@ -1,4 +1,5 @@
 ﻿using PayCalculator.core.Model.Salary;
+using PayCalculator.Ext.Model.Salary;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +10,11 @@ namespace PayCalculator.Ext.BusinessObjects.Salary
     public class AustraliaSalaryStrategy : ISalaryStrategy
     {
         public decimal GrossSalary { get; set; }
-        private IDeductions _deductions;
+        private IAustraliaSalaryDeductions _deductions;
 
-        public AustraliaSalaryStrategy()
+        public AustraliaSalaryStrategy(IAustraliaSalaryDeductions deductions)
         {
-
+            _deductions = deductions; 
         }
 
         public ISalary Execute()
