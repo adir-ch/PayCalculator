@@ -1,4 +1,6 @@
 ﻿using NUnit.Framework;
+using PayCalculator.core.BusinessObjects.Location;
+using PayCalculator.core.Model.Location;
 using PayCalculator.Ext.BusinessObjects.Location;
 using System;
 using System.Collections.Generic;
@@ -32,6 +34,16 @@ namespace PayCalculator.Ext.BusinessObjects.Test.Location
             var createdLocation = _locationFactory.CreateLocation(location);
             var existingLocation = _locationFactory.CreateLocation(location);
             Assert.AreEqual(createdLocation, existingLocation);
+        }
+
+        [Test]
+        [TestCase("Australia", typeof(AustraliaLocation))]
+        [TestCase("Germany", typeof(GermanyLocation))]
+        [TestCase("USA", typeof(DefaultCoreLocation))]
+        public void ReturnSpecificLocationInstance(string location, Type instanceType)
+        {
+            var createdObject = _locationFactory.CreateLocation(location);
+            Assert.AreEqual(instanceType, createdObject.GetType());
         }
     }
 }
