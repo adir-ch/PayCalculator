@@ -77,5 +77,17 @@ namespace PayCalculator.Ext.BusinessObjects.Test.Salary
             Assert.AreEqual(_salary.NetAnnualSalary, calculatedSalary.NetAnnualSalary);
             Assert.AreEqual(_salary.Deductions, calculatedSalary.Deductions);
         }
+
+        [Test]
+        public void ContainSuperAnnuationInTheDeductionsReport()
+        {
+            _australiaSalaryStrategy.GrossSalary = _initialGrossSalary;
+            ISalary calculatedSalary = _australiaSalaryStrategy.Execute();
+
+            decimal super = (_salary.GrossSalary * (decimal)0.086758);
+            var expectedSuperEntry = Tuple.Create<string, decimal>("Superannuation", super);
+            ICollection<Tuple<string, decimal>> collection = calculatedSalary.Deductions as ICollection<Tuple<string, decimal>>; 
+            Assert.That(collection, Has.Member(expectedSuperEntry));
+        }
     }
 }
