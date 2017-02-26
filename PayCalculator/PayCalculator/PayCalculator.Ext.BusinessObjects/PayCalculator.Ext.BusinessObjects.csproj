@@ -39,6 +39,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Location\AustraliaLocation.cs" />
+    <Compile Include="Location\AustraliaSalaryStrategy.cs" />
+    <Compile Include="Location\GermanyLocation.cs" />
     <Compile Include="Location\LocationFactoryExt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
