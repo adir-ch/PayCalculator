@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace PayCalculator.Ext.BusinessObjects.Location
+namespace PayCalculator.Ext.BusinessObjects.Salary
 {
     public class AustraliaSalaryStrategy : ISalaryStrategy
     {

@@ -1,7 +1,7 @@
 ﻿using Moq;
 using NUnit.Framework;
 using PayCalculator.core.Model.Salary;
-using PayCalculator.Ext.BusinessObjects.Location;
+using PayCalculator.Ext.BusinessObjects.Salary;
 using bc = PayCalculator.core.BusinessObjects.Salary;
 using PayCalculator.Infra.IoC;
 using System;
