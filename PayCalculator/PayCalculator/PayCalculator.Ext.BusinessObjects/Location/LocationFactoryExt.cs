@@ -12,7 +12,7 @@ namespace PayCalculator.Ext.BusinessObjects.Location
     {
         protected override ILocation GenerateLocationObject(string locationName)
         {
-            throw new NotImplementedException();
+            return new DefaultCoreLocation();
         }
     }
 }
