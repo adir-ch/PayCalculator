@@ -22,18 +22,24 @@ namespace PayCalculator.Ext.BusinessObjects.Tax.Australia
         public decimal CalculateTax(decimal taxableIncome)
         {
             var baseTax = _decoratedCalculator.CalculateTax(taxableIncome); 
-            decimal lowIncomeTaxOffset = 0; 
+            decimal lowIncomeTaxOffset = 0;
 
-            if (taxableIncome <= 37000) 
+            if (taxableIncome < 66667)
             {
-                lowIncomeTaxOffset = 445; 
-            }
+                if (taxableIncome <= 37000)
+                {
+                    lowIncomeTaxOffset = 445;
+                }
+                else
+                {
+                    lowIncomeTaxOffset = (decimal)(445 - ((taxableIncome - 37000) * (decimal)0.0015));
+                }
 
-            if ((baseTax - lowIncomeTaxOffset) < 0)
-            {
-                return 0; 
+                if ((baseTax - lowIncomeTaxOffset) < 0)
+                {
+                    return 0;
+                }
             }
-            
             return (baseTax - lowIncomeTaxOffset);
         }
     }
