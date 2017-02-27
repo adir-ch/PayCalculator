@@ -1,10 +1,7 @@
 ﻿using PayCalculator.core.Model.Salary;
 using PayCalculator.Ext.Model.Salary;
-using cbc = PayCalculator.core.BusinessObjects.Salary;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using cbc = PayCalculator.core.BusinessObjects.Salary;
 
 namespace PayCalculator.Ext.BusinessObjects.Salary.Australia
 {

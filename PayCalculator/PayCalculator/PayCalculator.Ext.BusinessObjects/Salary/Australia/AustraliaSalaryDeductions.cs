@@ -22,7 +22,7 @@ namespace PayCalculator.Ext.BusinessObjects.Salary.Australia
             // var rules = DB.GetAsutraliaSalaryDeductionsRules(); 
             // var rules = WebApi.GetConfigurationService("AsutraliaSalaryDeductionsRules"); 
 
-            var fetchedRules = new List<string>() { "IncomTaxDeductionRule", 
+            var fetchedRules = new List<string>() { "IncomeTaxDeductionRule", 
                                                     "MedicareLevyDeductionRule", 
                                                     "BudgetRepairTaxDeductionRule" };
 
