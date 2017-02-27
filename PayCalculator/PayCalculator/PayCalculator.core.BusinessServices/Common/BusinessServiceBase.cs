@@ -29,7 +29,7 @@ namespace PayCalculator.core.BusinessServices.Common
             catch (Exception e)
             {
                 _log.ErrorFormat("Service exception on request (id: {0}) for service: {1}", request.RequestId, request.ServiceName);
-                _log.DebugFormat("Exception data: {0}{1}", Environment.NewLine, e);
+                _log.DebugFormat("Exception data: {0}{1}", Environment.NewLine, e.Message);
 
                 // TODO: I could call a factory to generate an error response 
                 response = BuildErrorResponse(request);
