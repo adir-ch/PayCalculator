@@ -20,6 +20,11 @@ namespace PayCalculator.Ext.BusinessObjects.Salary.Australia.DeductionRules
 
         public decimal Apply(decimal taxableIncome)
         {
+            if (taxableIncome <= 0)
+            {
+                return 0;
+            }
+
             ITaxCalculator calculator = Injector.Instance.Inject<ITaxCalculator>("AustraliaBudgetRepairTaxCalculator");
             return calculator.CalculateTax(taxableIncome);
         }
