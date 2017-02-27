@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PayCalculator.core.Model.Tax;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,11 @@ using System.Threading.Tasks;
 
 namespace PayCalculator.Ext.BusinessObjects.Tax.NewZealand
 {
-    class SocialSecurityAndHealthContribTaxCalculator
+    public class SocialSecurityAndHealthContribTaxCalculator : ITaxCalculator
     {
+        public decimal CalculateTax(decimal taxableIncome)
+        {
+            return Math.Min(118191, (taxableIncome * (decimal)0.00145));
+        }
     }
 }
