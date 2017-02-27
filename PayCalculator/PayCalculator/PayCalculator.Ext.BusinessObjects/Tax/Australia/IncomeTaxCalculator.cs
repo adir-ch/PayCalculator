@@ -30,8 +30,7 @@ namespace PayCalculator.Ext.BusinessObjects.Tax.Australia
 
         private void InitBracets(string description)
         {
-            // adding the tax bracets - should be done via microservice 
-            // bracets should be taken from DB
+            // TODO: Bracets should be taken from DB or microservice
             _taxBrackets.Add(new DefaultTaxBracket(0, 18200, 0));
             _taxBrackets.Add(new DefaultTaxBracket(18201, 37000, (decimal)0.19));
             _taxBrackets.Add(new DefaultTaxBracket(37001, 87000, (decimal)0.325));
