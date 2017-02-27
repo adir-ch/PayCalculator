@@ -7,6 +7,16 @@ namespace PayCalculator.Ext.BusinessObjects.Test.Tax.Australia
     [TestFixture]
     public class LowIncomeTaxOffsetCalculatorDecoratorShould
     {
+        private LowIncomeTaxOffsetCalculatorDecorator _decorator;
+        private au.IncomeTaxCalculator _decoratedCalculator;
+
+        [OneTimeSetUp]
+        public void Init()
+        {
+            _decoratedCalculator = new au.IncomeTaxCalculator(); 
+            _decorator = new LowIncomeTaxOffsetCalculatorDecorator(_decoratedCalculator);
+        }
+
         [Test]
         [TestCase(0, ExpectedResult = 0)]
         [TestCase(18201, ExpectedResult = 0)]
@@ -14,8 +24,7 @@ namespace PayCalculator.Ext.BusinessObjects.Test.Tax.Australia
         [TestCase(200000, ExpectedResult = 63232)]
         public decimal CalculateTaxBrackets(decimal taxableIncom)
         {
-            LowIncomeTaxOffsetCalculatorDecorator calculator = new LowIncomeTaxOffsetCalculatorDecorator();
-            return calculator.CalculateTax(taxableIncom);
+            return _decorator.CalculateTax(taxableIncom);
         }
     }
 }
