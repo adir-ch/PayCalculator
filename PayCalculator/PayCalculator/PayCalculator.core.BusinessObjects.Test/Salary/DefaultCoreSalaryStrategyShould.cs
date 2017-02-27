@@ -1,14 +1,11 @@
 ﻿using Moq;
 using NUnit.Framework;
-using bc = PayCalculator.core.BusinessObjects.Salary;
 using PayCalculator.core.BusinessObjects.Salary;
 using PayCalculator.core.Model.Salary;
+using PayCalculator.Infra.IoC;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PayCalculator.Infra.IoC;
+using bc = PayCalculator.core.BusinessObjects.Salary;
 
 
 namespace PayCalculator.core.BusinessObjects.Test.Salary

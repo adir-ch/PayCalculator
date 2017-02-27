@@ -1,13 +1,8 @@
-﻿using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PayCalculator.Ext.BusinessObjects.Salary.Australia.DeductionRules;
-using PayCalculator.Infra.IoC;
+﻿using Moq;
+using NUnit.Framework;
 using PayCalculator.core.Model.Tax;
-using Moq; 
+using PayCalculator.Ext.BusinessObjects.Salary.Australia.DeductionRules;
+using PayCalculator.Infra.IoC; 
 
 namespace PayCalculator.Ext.BusinessObjects.Test.Salary.Australia
 {

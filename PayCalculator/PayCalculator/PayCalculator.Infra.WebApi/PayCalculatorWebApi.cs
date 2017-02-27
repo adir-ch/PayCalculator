@@ -1,9 +1,7 @@
-﻿using Microsoft.Practices.Unity;
-using PayCalculator.Contracts.Common;
+﻿using PayCalculator.Contracts.Common;
 using PayCalculator.core.Model.Common;
 using PayCalculator.Infra.IoC;
 using System;
-using System.Threading;
 
 namespace PayCalculator.Infra.WebApi
 {

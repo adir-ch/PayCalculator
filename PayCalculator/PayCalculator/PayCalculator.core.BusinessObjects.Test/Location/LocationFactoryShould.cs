@@ -1,10 +1,5 @@
 ﻿using NUnit.Framework;
 using PayCalculator.core.BusinessObjects.Location;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PayCalculator.core.BusinessObjects.Test.Location
 {

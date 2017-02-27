@@ -1,6 +1,5 @@
 ﻿using NUnit.Framework;
 using PayCalculator.Contracts.Employee;
-using PayCalculator.Ext.BusinessObjects.Salary.Australia;
 using PayCalculator.Infra.IoC;
 using PayCalculator.Infra.WebApi;
 using System;

@@ -1,7 +1,6 @@
 ﻿using PayCalculator.core.Model.Salary;
 using PayCalculator.core.Model.Tax;
 using PayCalculator.Infra.IoC;
-using System;
 
 namespace PayCalculator.core.BusinessObjects.Salary
 {

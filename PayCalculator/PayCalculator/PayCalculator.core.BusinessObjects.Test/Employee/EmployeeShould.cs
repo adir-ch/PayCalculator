@@ -5,10 +5,6 @@ using PayCalculator.core.Model.Location;
 using PayCalculator.core.Model.Salary;
 using PayCalculator.Infra.IoC;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using bc = PayCalculator.core.BusinessObjects.Employee;
 using sbc = PayCalculator.core.BusinessObjects.Salary;
 

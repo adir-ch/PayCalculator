@@ -2,11 +2,6 @@
 using PayCalculator.core.Model.Employee;
 using PayCalculator.core.Model.Location;
 using PayCalculator.core.Model.Salary;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PayCalculator.core.BusinessObjects.Employee
 {

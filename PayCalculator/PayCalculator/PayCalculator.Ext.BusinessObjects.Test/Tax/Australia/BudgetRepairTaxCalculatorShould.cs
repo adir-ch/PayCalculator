@@ -1,10 +1,5 @@
 ﻿using NUnit.Framework;
 using PayCalculator.Ext.BusinessObjects.Tax.Australia;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PayCalculator.Ext.BusinessObjects.Test.Tax.Australia
 {
