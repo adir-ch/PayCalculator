@@ -20,6 +20,7 @@ namespace PayCalculator.Ext.BusinessObjects.Test.Tax.Australia
         [Test]
         [TestCase(0, ExpectedResult = 0)]
         [TestCase(20000, ExpectedResult = 0)] // TODO: what happens if below zero
+        [TestCase(40000, ExpectedResult = 4107)]
         [TestCase(66667, ExpectedResult = 13214)]
         public decimal CalculateTaxBrackets(decimal taxableIncom)
         {
