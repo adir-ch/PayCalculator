@@ -1,9 +1,6 @@
 ﻿using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using PayCalculator.Ext.BusinessObjects.Tax.Australia;
+using au = PayCalculator.Ext.BusinessObjects.Tax.Australia;
 
 namespace PayCalculator.Ext.BusinessObjects.Test.Tax.Australia
 {
@@ -11,10 +8,14 @@ namespace PayCalculator.Ext.BusinessObjects.Test.Tax.Australia
     public class LowIncomeTaxOffsetCalculatorDecoratorShould
     {
         [Test]
-        public void TestMethod()
+        [TestCase(0, ExpectedResult = 0)]
+        [TestCase(18201, ExpectedResult = 0)]
+        [TestCase(85000, ExpectedResult = 19172)]
+        [TestCase(200000, ExpectedResult = 63232)]
+        public decimal CalculateTaxBrackets(decimal taxableIncom)
         {
-            // TODO: Add your test code here
-            Assert.Pass("Your first passing test");
+            LowIncomeTaxOffsetCalculatorDecorator calculator = new LowIncomeTaxOffsetCalculatorDecorator();
+            return calculator.CalculateTax(taxableIncom);
         }
     }
 }
