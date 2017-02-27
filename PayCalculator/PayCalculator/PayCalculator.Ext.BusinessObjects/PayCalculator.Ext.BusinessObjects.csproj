@@ -45,6 +45,7 @@
     <Compile Include="Location\GermanyLocation.cs" />
     <Compile Include="Location\LocationFactoryExt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Salary\Australia\DeductionRules\BudgetRepairTaxDeductionRule.cs" />
     <Compile Include="Salary\Australia\DeductionRules\IncomeTaxDeductionRule.cs" />
     <Compile Include="Salary\Australia\DeductionRules\MedicareLevyDeductionRule.cs" />
   </ItemGroup>

@@ -31,5 +31,11 @@ namespace PayCalculator.Ext.BusinessObjects.Test.Salary.Australia
         {
             _deductionRule = new BudgetRepairTaxDeductionRule();
         }
+
+        [Test]
+        public void SetAustralianMedicareDeductionRuleDescription()
+        {
+            Assert.AreEqual(_deductionRule.GetRuleDescription(), "Temporary Budget Repair Levy");
+        }
     }
 }
