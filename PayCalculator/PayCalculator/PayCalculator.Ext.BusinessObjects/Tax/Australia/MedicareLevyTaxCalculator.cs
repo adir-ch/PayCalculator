@@ -1,4 +1,5 @@
-﻿using PayCalculator.core.BusinessObjects.Tax;
+﻿using log4net;
+using PayCalculator.core.BusinessObjects.Tax;
 using PayCalculator.core.Model.Tax;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ namespace PayCalculator.Ext.BusinessObjects.Tax.Australia
 {
     public class MedicareLevyTaxCalculator : ITaxCalculator
     {
+        protected readonly ILog _log = LogManager.GetLogger("AU Income tax calc");
         private List<ITaxBracket> _taxBrackets;
 
         public MedicareLevyTaxCalculator()
@@ -24,7 +26,9 @@ namespace PayCalculator.Ext.BusinessObjects.Tax.Australia
                  .Where(bracket => bracket.CanApplyBracket(taxableIncome))
                  .Sum(validBracket => validBracket.CalculateTaxBracket(taxableIncome));
 
-            return Math.Round(totalCalculatedMedicareLevy, MidpointRounding.AwayFromZero);
+            var roundedTotalCalculatedMedicareLevy = Math.Round(totalCalculatedMedicareLevy, MidpointRounding.AwayFromZero);
+            _log.DebugFormat("Calculated total Medicare Levy: {0}", roundedTotalCalculatedMedicareLevy);
+            return roundedTotalCalculatedMedicareLevy; 
         }
 
         private void InitBracets(string description)
