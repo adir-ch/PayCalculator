@@ -24,7 +24,7 @@ namespace PayCalculator.Ext.BusinessObjects.Tax.Australia
                  .Where(bracket => bracket.CanApplyBracket(taxableIncome))
                  .Sum(validBracket => validBracket.CalculateTaxBracket(taxableIncome));
 
-            return Math.Round(totalCalculatedMedicareLevy);
+            return Math.Round(totalCalculatedMedicareLevy, MidpointRounding.AwayFromZero);
         }
 
         private void InitBracets(string description)
