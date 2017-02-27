@@ -5,16 +5,16 @@ using au = PayCalculator.Ext.BusinessObjects.Tax.Australia;
 namespace PayCalculator.Ext.BusinessObjects.Test.Tax.Australia
 {
     [TestFixture]
-    public class LowIncomeTaxOffsetCalculatorDecoratorShould
+    public class LowIncomeTaxOffsetTaxCalculatorDecoratorShould
     {
-        private LowIncomeTaxOffsetCalculatorDecorator _decorator;
+        private LowIncomeTaxOffsetTaxCalculatorDecorator _decorator;
         private au.IncomeTaxCalculator _decoratedCalculator;
 
         [OneTimeSetUp]
         public void Init()
         {
             _decoratedCalculator = new au.IncomeTaxCalculator(); 
-            _decorator = new LowIncomeTaxOffsetCalculatorDecorator(_decoratedCalculator);
+            _decorator = new LowIncomeTaxOffsetTaxCalculatorDecorator(_decoratedCalculator);
         }
 
         [Test]
