@@ -28,7 +28,7 @@ namespace PayCalculator.Ext.BusinessObjects.Tax.Australia
                 if (bracket.CanApplyBracket(taxableIncome) == true)
                 {
                     currentBracet = bracket.CalculateTaxBracket(taxableIncome);
-                    totalCalculatedIncomeTax += currentBracet;
+                    totalCalculatedIncomeTax += Math.Round(currentBracet);
                 }
                 else
                 {
