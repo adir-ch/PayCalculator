@@ -54,6 +54,7 @@
     <Compile Include="Salary\Australia\DeductionRules\MedicareLevyDeductionRule.cs" />
     <Compile Include="Tax\Australia\BudgetRepairTaxCalculator.cs" />
     <Compile Include="Tax\Australia\IncomeTaxCalculator.cs" />
+    <Compile Include="Tax\Australia\MedicareLevyTaxCalculator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
