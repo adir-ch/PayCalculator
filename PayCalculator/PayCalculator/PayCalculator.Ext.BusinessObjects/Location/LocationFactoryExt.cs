@@ -26,6 +26,11 @@ namespace PayCalculator.Ext.BusinessObjects.Location
                         registeredLocationName = "GermanyLocation";
                         break;
                     }
+                case "NewZealand":
+                    {
+                        registeredLocationName = "NewZealandLocation";
+                        break;
+                    }
                 default:
                     {
                         registeredLocationName = "DefaultCoreLocation";

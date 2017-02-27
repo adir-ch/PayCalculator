@@ -15,7 +15,7 @@ namespace PayCalculator.Ext.BusinessObjects.Location
 
         public ISalaryStrategy GetLocationSalaryStrategy()
         {
-            var salaryStrategy = Injector.Instance.Inject<ISalaryStrategy>("AustraliaSalaryStrategy");
+            var salaryStrategy = Injector.Instance.Inject<ISalaryStrategy>("NewZealandSalaryStrategy");
             return salaryStrategy;
         }
     }

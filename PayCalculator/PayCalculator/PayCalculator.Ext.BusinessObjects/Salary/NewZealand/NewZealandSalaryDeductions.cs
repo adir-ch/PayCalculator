@@ -18,7 +18,7 @@ namespace PayCalculator.Ext.BusinessObjects.Salary.NewZealand
             // var rules = DB.GetAsutraliaSalaryDeductionsRules(); 
             // var rules = WebApi.GetConfigurationService("AsutraliaSalaryDeductionsRules"); 
 
-            var fetchedRules = new List<string>() { "IncomeTaxDeductionRule", 
+            var fetchedRules = new List<string>() { "NewZealandIncomeTaxDeductionRule", 
                                                     "SocialSecurityAndHealthContribDeductionRule" };
 
             var rules = fetchedRules.Select(ruleName => Injector.Instance.Inject<IDeductionRule>(ruleName));
