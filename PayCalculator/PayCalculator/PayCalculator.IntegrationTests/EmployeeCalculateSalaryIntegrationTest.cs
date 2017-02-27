@@ -28,7 +28,7 @@ namespace PayCalculator.IntegrationTests
         }
 
         [Test]
-        public void EmployeeIntegrationTest()
+        public void CalcEmployeeSalaryIntegrationTest()
         {
             var addResponse = _webApi.CallService(_employeeAddRequest);
             Assert.That(addResponse.Status, Is.True);
