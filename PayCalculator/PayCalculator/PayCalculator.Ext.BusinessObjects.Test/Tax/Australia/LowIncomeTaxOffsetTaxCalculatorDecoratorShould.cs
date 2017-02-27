@@ -19,9 +19,6 @@ namespace PayCalculator.Ext.BusinessObjects.Test.Tax.Australia
 
         [Test]
         [TestCase(0, ExpectedResult = 0)]
-        [TestCase(18201, ExpectedResult = 0)]
-        [TestCase(85000, ExpectedResult = 19172)]
-        [TestCase(200000, ExpectedResult = 63232)]
         public decimal CalculateTaxBrackets(decimal taxableIncom)
         {
             return _decorator.CalculateTax(taxableIncom);
