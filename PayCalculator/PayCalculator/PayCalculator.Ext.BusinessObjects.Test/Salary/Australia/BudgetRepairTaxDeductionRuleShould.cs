@@ -37,5 +37,18 @@ namespace PayCalculator.Ext.BusinessObjects.Test.Salary.Australia
         {
             Assert.AreEqual(_deductionRule.GetRuleDescription(), "Temporary Budget Repair Levy");
         }
+
+        [Test]
+        public void CallCalculateTaxOnRuleApply([Values(0, 1000, 5000)] decimal taxableIncome)
+        {
+            _budgetRepairTaxCalculatorMock.Setup(calc => calc.CalculateTax(taxableIncome)).Returns(100);
+            var taxDeduction = _deductionRule.Apply(taxableIncome);
+
+            if (taxableIncome > 0)
+            {
+                _budgetRepairTaxCalculatorMock.Verify(f => f.CalculateTax(taxableIncome), Times.Once());
+                Assert.That(taxDeduction, Is.EqualTo(100));
+            }
+        }
     }
 }
