@@ -48,10 +48,9 @@
     <Compile Include="Salary\Australia\DeductionRules\BudgetRepairTaxDeductionRule.cs" />
     <Compile Include="Salary\Australia\DeductionRules\IncomeTaxDeductionRule.cs" />
     <Compile Include="Salary\Australia\DeductionRules\MedicareLevyDeductionRule.cs" />
+    <Compile Include="Tax\Australia\IncomeTaxCalculator.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Tax\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\PayCalculator.core.BusinessObjects\PayCalculator.core.BusinessObjects.csproj">
       <Project>{13de9634-2911-45bb-993a-c0d7fb12a759}</Project>
