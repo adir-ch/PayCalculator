@@ -12,9 +12,9 @@ namespace PayCalculator.Ext.BusinessObjects.Test.Tax.Australia
     public class BudgetRepairTaxCalculatorShould
     {
         [Test]
-        [TestCase(200000, ExpectedResult = 63232)]
+        [TestCase(200000, ExpectedResult = 400)]
         [TestCase(0, ExpectedResult = 0)]
-        [TestCase(18201, ExpectedResult = 0)]
+        [TestCase(180000, ExpectedResult = 0)]
         [TestCase(85000, ExpectedResult = 0)]
         public decimal CalculateBudgetRepairTax(decimal taxableIncome)
         {
