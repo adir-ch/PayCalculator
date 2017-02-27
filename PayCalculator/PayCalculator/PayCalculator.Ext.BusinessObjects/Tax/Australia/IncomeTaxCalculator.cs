@@ -23,18 +23,9 @@ namespace PayCalculator.Ext.BusinessObjects.Tax.Australia
             decimal totalCalculatedIncomeTax = 0; 
             decimal currentBracet = 0;
 
-            foreach (var bracket in _taxBrackets)
-            {
-                if (bracket.CanApplyBracket(taxableIncome) == true)
-                {
-                    currentBracet = bracket.CalculateTaxBracket(taxableIncome);
-                    totalCalculatedIncomeTax += Math.Round(currentBracet);
-                }
-                else
-                {
-                    break;
-                }
-            }
+            var validBrackets = _taxBrackets.Where(bracket => bracket.CanApplyBracket(taxableIncome));
+            totalCalculatedIncomeTax = validBrackets.Sum(
+                validBracket => Math.Round(validBracket.CalculateTaxBracket(taxableIncome)));
 
             _log.DebugFormat("Calculated total income tax: {0}", totalCalculatedIncomeTax);
             return totalCalculatedIncomeTax;
