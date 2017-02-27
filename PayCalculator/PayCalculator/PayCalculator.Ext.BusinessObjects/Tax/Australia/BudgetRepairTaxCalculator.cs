@@ -11,6 +11,10 @@ namespace PayCalculator.Ext.BusinessObjects.Tax.Australia
     {
         public decimal CalculateTax(decimal taxableIncome)
         {
+            if (taxableIncome <= 180000)  // take values from DB
+            {
+                return 0; 
+            }
             return 0;
         }
     }
