@@ -116,26 +116,40 @@ namespace PayCalculator
             string grossSalary;
             ReadDataFromConsole(out employeeName, out location, out grossSalary);
 
+            StartPayCalculatorClient(employeeName, location, grossSalary);
+            Console.ReadLine();
+        }
+
+        private static void StartPayCalculatorClient(string employeeName, string location, string grossSalary)
+        {
             Client client = new Client();
-            client.AddNewEmployee(employeeName, location, grossSalary);
-            client.CalculateEmployeeNetSalary(employeeName); // going lazy 
-            var employeeReport = client.PrintEmployeeSalaryReport(employeeName);
+            string employeeReport; 
+            try
+            {
+                client.AddNewEmployee(employeeName, location, grossSalary);
+                client.CalculateEmployeeNetSalary(employeeName); // going lazy 
+                employeeReport = client.PrintEmployeeSalaryReport(employeeName);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Client failed sending requests: {0}", e.Message);
+                return;
+            }
 
             Console.WriteLine("---------------------");
             Console.WriteLine(employeeReport);
-            Console.ReadLine();
         }
 
         private static void ReadDataFromConsole(out string employeeName, out string location, out string grossSalary)
         {
-            //Console.Write("Employee name: ");
-            employeeName = "ADIR";  //Console.ReadLine();
+            Console.Write("Employee name: ");
+            employeeName = Console.ReadLine();
 
-            //Console.Write("Employee location: ");
-            location = "Australia";  //Console.ReadLine();
+            Console.Write("Employee location: ");
+            location = Console.ReadLine();
 
-            //Console.Write("Gross Salary: ");
-            grossSalary = "200,000"; // Console.ReadLine();
+            Console.Write("Gross Salary: ");
+            grossSalary = Console.ReadLine();
         }
     }
 }
