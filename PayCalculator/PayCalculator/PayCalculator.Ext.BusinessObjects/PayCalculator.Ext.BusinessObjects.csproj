@@ -52,10 +52,22 @@
     <Compile Include="Salary\Australia\DeductionRules\BudgetRepairTaxDeductionRule.cs" />
     <Compile Include="Salary\Australia\DeductionRules\IncomeTaxDeductionRule.cs" />
     <Compile Include="Salary\Australia\DeductionRules\MedicareLevyDeductionRule.cs" />
+    <Compile Include="Salary\Germany\DeductionRules\IncomeTaxDeductionRule.cs" />
+    <Compile Include="Salary\Germany\DeductionRules\SolidaritySurchargeDeductionRule.cs" />
+    <Compile Include="Salary\Germany\GermanySalaryDeductions.cs" />
+    <Compile Include="Salary\Germany\GermanySalaryStrategy.cs" />
+    <Compile Include="Salary\NewZealand\DeductionRules\IncomeTaxDeductionRule.cs" />
+    <Compile Include="Salary\NewZealand\DeductionRules\SocialSecurityAndHealthContribDeductionRule.cs" />
+    <Compile Include="Salary\NewZealand\NewZealandSalaryDeductions.cs" />
+    <Compile Include="Salary\NewZealand\NewZealandSalaryStrategy.cs" />
     <Compile Include="Tax\Australia\BudgetRepairTaxCalculator.cs" />
     <Compile Include="Tax\Australia\IncomeTaxCalculator.cs" />
     <Compile Include="Tax\Australia\LowIncomeTaxOffsetTaxCalculatorDecorator.cs" />
     <Compile Include="Tax\Australia\MedicareLevyTaxCalculator.cs" />
+    <Compile Include="Tax\Germany\SolidaritySurchargeCalculator.cs" />
+    <Compile Include="Tax\Germany\IncomeTaxCalculator.cs" />
+    <Compile Include="Tax\NewZealand\IncomeTaxCalculator.cs" />
+    <Compile Include="Tax\NewZealand\SocialSecurityAndHealthContribTaxCalculator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -78,6 +90,7 @@
       <Name>PayCalculator.Infra.IoC</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
