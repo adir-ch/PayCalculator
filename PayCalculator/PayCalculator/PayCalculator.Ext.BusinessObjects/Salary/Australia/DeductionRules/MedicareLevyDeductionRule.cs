@@ -13,7 +13,7 @@ namespace PayCalculator.Ext.BusinessObjects.Salary.Australia.DeductionRules
 
         public string GetRuleDescription()
         {
-            throw new NotImplementedException();
+            return "Medicare Levy";
         }
 
         public decimal Apply(decimal taxableIncome)
