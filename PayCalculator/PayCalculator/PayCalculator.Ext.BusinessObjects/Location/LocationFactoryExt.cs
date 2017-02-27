@@ -14,19 +14,19 @@ namespace PayCalculator.Ext.BusinessObjects.Location
         protected override ILocation GenerateLocationObject(string locationName)
         {
             string registeredLocationName; 
-            switch (locationName)
+            switch (locationName.ToLower())
             {
-                case "Australia":
+                case "australia":
                     {
                         registeredLocationName = "AustraliaLocation";
                         break;
                     }
-                case "Germany":
+                case "germany":
                     {
                         registeredLocationName = "GermanyLocation";
                         break;
                     }
-                case "NewZealand":
+                case "newzealand":
                     {
                         registeredLocationName = "NewZealandLocation";
                         break;
