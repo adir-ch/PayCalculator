@@ -11,7 +11,7 @@ namespace PayCalculator.Ext.BusinessObjects.Tax.Australia
     {
         public decimal CalculateTax(decimal taxableIncome)
         {
-            throw new NotImplementedException(); 
+            return 0;
         }
     }
 }
