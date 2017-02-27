@@ -30,6 +30,7 @@ namespace PayCalculator.Ext.BusinessObjects.Test.Tax.Australia
         }
 
         [TestCase(182648.40, ExpectedResult = 53)]
+        [TestCase(182612.5, ExpectedResult = 52)]
         public decimal RoundUpCalculatedBudgetRepair(decimal taxableIncome)
         {
             return _budgetRepairCalculator.CalculateTax(taxableIncome); 
