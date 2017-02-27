@@ -10,5 +10,6 @@ namespace PayCalculator.core.Model.Tax
     {
         bool CanApplyBracket(decimal taxableIncome);
         decimal CalculateTaxBracket(decimal taxableIncome);
+        bool IsInBracket(decimal taxableIncome);
     }
 }
