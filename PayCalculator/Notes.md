@@ -35,6 +35,14 @@ serializes / deserializers - which I do not implement here (for simplicity purpo
 - Abstract classes are tested through testing the derived classes.
 - Australian tax offset - if calculated tax is smaller than 445, I've set the tax to 0 (unless you get money for earning low income - didn't really know what to do...).
 
+
+### Integration tests ###
+
+- Integration tests are actually an end to end test.
+- Those test can be also refereed to as behavioral test, since they check the results without all the small steps in between.
+- The principle is to send a request and compare the response to should-be response.
+- I've created an Integration test for each service.
+
 ### 3rd party ###
 
 - Dependency injection - Unity
