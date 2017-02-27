@@ -13,7 +13,7 @@ namespace PayCalculator.Ext.BusinessObjects.Salary.Australia.DeductionRules
 
         public string GetRuleDescription()
         {
-            throw new NotImplementedException();
+            return "Temporary Budget Repair Levy";
         }
 
         public decimal Apply(decimal taxableIncome)
