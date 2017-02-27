@@ -3,6 +3,7 @@ using Microsoft.Practices.Unity.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -24,11 +25,6 @@ namespace PayCalculator.Infra.IoC
         {
             return _container.Resolve<T>(Name);
         }
-
-        //public void Register(Type typeFrom, Type typeTo, string name = null)
-        //{
-        //    _container.RegisterType(typeFrom, typeTo, name); 
-        //}
 
         public void RegisterInstance<T>(T instance, string name)
         {
@@ -55,6 +51,23 @@ namespace PayCalculator.Infra.IoC
             {
                 configuration.Configure(_container);
             }
+            else
+            {
+                // Ugly hack for the integration tests
+                TryLoadingAlternateConfigurationFile();
+            }
+        }
+
+        private void TryLoadingAlternateConfigurationFile()
+        {
+            var filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "unity.config");
+            var fileMap = new ExeConfigurationFileMap { ExeConfigFilename = filePath };
+
+            System.Configuration.Configuration configuration =
+                ConfigurationManager.OpenMappedExeConfiguration(fileMap, ConfigurationUserLevel.None);
+
+            var unitySection = (UnityConfigurationSection)configuration.GetSection("unity");
+            unitySection.Configure(_container);
         }
 
         private void ContainerAdditionalConfiguration()

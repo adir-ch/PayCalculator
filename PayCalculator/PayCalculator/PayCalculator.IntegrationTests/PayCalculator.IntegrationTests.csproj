@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6D2196B4-DE94-4400-BE13-55E11765B14D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PayCalculator.IntegrationTests</RootNamespace>
+    <AssemblyName>PayCalculator.IntegrationTests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework, Version=3.0.5813.39031, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NUnit.3.0.1\lib\net45\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EmployeeAddIntegrationTest.cs" />
+    <Compile Include="EmployeeCalculateSalaryIntegrationTest.cs" />
+    <Compile Include="EmployeeLookupIntegrationTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PayCalculator.Contracts\PayCalculator.Contracts.csproj">
+      <Project>{0db6c884-622a-4946-ad47-80bd819b860f}</Project>
+      <Name>PayCalculator.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PayCalculator.core.BusinessObjects.Test\PayCalculator.core.BusinessObjects.Test.csproj">
+      <Project>{8edf4429-251a-416d-bb68-93f227191bcf}</Project>
+      <Name>PayCalculator.core.BusinessObjects.Test</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PayCalculator.core.BusinessObjects\PayCalculator.core.BusinessObjects.csproj">
+      <Project>{13de9634-2911-45bb-993a-c0d7fb12a759}</Project>
+      <Name>PayCalculator.core.BusinessObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PayCalculator.core.BusinessServices\PayCalculator.core.BusinessServices.csproj">
+      <Project>{771e6362-16d5-468e-9b02-50e7ce42aa7a}</Project>
+      <Name>PayCalculator.core.BusinessServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PayCalculator.core.DAO\PayCalculator.core.DAO.csproj">
+      <Project>{af9750c7-e608-45d3-9699-572930c9b9f8}</Project>
+      <Name>PayCalculator.core.DAO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PayCalculator.core.Model\PayCalculator.core.Model.csproj">
+      <Project>{9087c591-eeac-4254-a732-2a3ae134a1c6}</Project>
+      <Name>PayCalculator.core.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PayCalculator.Ext.BusinessObjects.Test\PayCalculator.Ext.BusinessObjects.Test.csproj">
+      <Project>{6aec5061-6a59-4768-bced-dbf10626abdd}</Project>
+      <Name>PayCalculator.Ext.BusinessObjects.Test</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PayCalculator.Ext.BusinessObjects\PayCalculator.Ext.BusinessObjects.csproj">
+      <Project>{17e30c74-aa0a-4ebd-8e03-32c34a0c1908}</Project>
+      <Name>PayCalculator.Ext.BusinessObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PayCalculator.Ext.Model\PayCalculator.Ext.Model.csproj">
+      <Project>{d20856e3-edc3-4682-bee5-b657d41a7a1a}</Project>
+      <Name>PayCalculator.Ext.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PayCalculator.Infra.DataAccess\PayCalculator.Infra.DataAccess.csproj">
+      <Project>{55ee4915-d5a8-4fdd-8b65-148cee348ce7}</Project>
+      <Name>PayCalculator.Infra.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PayCalculator.Infra.IoC\PayCalculator.Infra.IoC.csproj">
+      <Project>{bfe06494-a556-40d0-ae91-749254731390}</Project>
+      <Name>PayCalculator.Infra.IoC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PayCalculator.Infra.WebApi\PayCalculator.Infra.WebApi.csproj">
+      <Project>{f5649313-b1ef-4829-adc4-eddbaab92949}</Project>
+      <Name>PayCalculator.Infra.WebApi</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

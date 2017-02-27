@@ -11,6 +11,7 @@ namespace PayCalculator.Contracts.Common
         string RequestId { get; set; }
         bool Status { get; set; }
         string Message { get; set; }
+        string ServiceName { get; set; }
 
         string DumpResponseHeader();
         string DumpResponseBody(); 
