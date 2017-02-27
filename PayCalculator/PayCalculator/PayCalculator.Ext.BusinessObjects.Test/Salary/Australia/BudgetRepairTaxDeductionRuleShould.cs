@@ -50,5 +50,15 @@ namespace PayCalculator.Ext.BusinessObjects.Test.Salary.Australia
                 Assert.That(taxDeduction, Is.EqualTo(100));
             }
         }
+
+        [Test]
+        [TestCase(0, ExpectedResult = 0)]
+        [TestCase(1000, ExpectedResult = 100)]
+        [TestCase(200000, ExpectedResult = 100)]
+        public decimal ReturnZeroMedicareLevyForZeroTaxableIncome(decimal taxableIncome)
+        {
+            _budgetRepairTaxCalculatorMock.Setup(calc => calc.CalculateTax(taxableIncome)).Returns(100);
+            return _deductionRule.Apply(taxableIncome);
+        }
     }
 }
