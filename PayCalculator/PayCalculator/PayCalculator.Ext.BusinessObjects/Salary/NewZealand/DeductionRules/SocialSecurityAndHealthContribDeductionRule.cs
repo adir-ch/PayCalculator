@@ -1,34 +1,26 @@
 ﻿using PayCalculator.core.Model.Salary;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using PayCalculator.core.Model.Tax;
+using PayCalculator.Infra.IoC;
 
 namespace PayCalculator.Ext.BusinessObjects.Salary.NewZealand.DeductionRules
 {
     public class SocialSecurityAndHealthContribDeductionRule : IDeductionRule
     {
-        public string RuleName
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public string RuleName { get; set; }
 
         public string GetRuleDescription()
         {
-            throw new NotImplementedException();
+            return "Social security and Health contribution"; // take from DB or config
         }
 
         public decimal Apply(decimal taxableIncome)
         {
-            throw new NotImplementedException();
+            if (taxableIncome <= 0)
+            {
+                return 0;
+            }
+            ITaxCalculator calculator = Injector.Instance.Inject<ITaxCalculator>("NewZealandSocialSecurityAndHealthContribTaxCalculator");
+            return calculator.CalculateTax(taxableIncome);
         }
     }
 }
