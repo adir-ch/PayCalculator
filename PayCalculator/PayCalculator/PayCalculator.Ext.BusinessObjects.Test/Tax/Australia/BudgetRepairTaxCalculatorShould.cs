@@ -11,6 +11,14 @@ namespace PayCalculator.Ext.BusinessObjects.Test.Tax.Australia
     [TestFixture]
     public class BudgetRepairTaxCalculatorShould
     {
+        private BudgetRepairTaxCalculator _budgetRepairCalculator;
+
+        [OneTimeSetUp]
+        public void Init()
+        {
+            _budgetRepairCalculator = new BudgetRepairTaxCalculator();
+        }
+
         [Test]
         [TestCase(200000, ExpectedResult = 400)]
         [TestCase(0, ExpectedResult = 0)]
@@ -18,8 +26,13 @@ namespace PayCalculator.Ext.BusinessObjects.Test.Tax.Australia
         [TestCase(85000, ExpectedResult = 0)]
         public decimal CalculateBudgetRepairTax(decimal taxableIncome)
         {
-            var budgetRepairTaxCalculator = new BudgetRepairTaxCalculator();
-            return budgetRepairTaxCalculator.CalculateTax(taxableIncome);
+            return _budgetRepairCalculator.CalculateTax(taxableIncome);
+        }
+
+        [TestCase(182648.40, ExpectedResult = 53)]
+        public decimal RoundUpCalculatedBudgetRepair(decimal taxableIncome)
+        {
+            return _budgetRepairCalculator.CalculateTax(taxableIncome); 
         }
     }
 }
