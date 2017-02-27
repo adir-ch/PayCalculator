@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using PayCalculator.Ext.BusinessObjects.Tax.Australia;
+using PayCalculator.Ext.Model.Tax;
 using au = PayCalculator.Ext.BusinessObjects.Tax.Australia;
 
 namespace PayCalculator.Ext.BusinessObjects.Test.Tax.Australia
@@ -8,13 +9,13 @@ namespace PayCalculator.Ext.BusinessObjects.Test.Tax.Australia
     public class LowIncomeTaxOffsetTaxCalculatorDecoratorShould
     {
         private LowIncomeTaxOffsetTaxCalculatorDecorator _decorator;
-        private au.IncomeTaxCalculator _decoratedCalculator;
+        private IAustraliaDecoratableTaxCalculator _decoratedCalculator;
 
         [OneTimeSetUp]
         public void Init()
         {
-            _decoratedCalculator = new au.IncomeTaxCalculator(); 
-            _decorator = new LowIncomeTaxOffsetTaxCalculatorDecorator(_decoratedCalculator);
+            _decoratedCalculator = new au.IncomeTaxCalculator();
+            _decorator = new au.LowIncomeTaxOffsetTaxCalculatorDecorator(_decoratedCalculator);
         }
 
         [Test]

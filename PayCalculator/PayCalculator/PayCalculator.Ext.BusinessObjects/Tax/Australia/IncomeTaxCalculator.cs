@@ -1,13 +1,14 @@
 ﻿using log4net;
 using PayCalculator.core.BusinessObjects.Tax;
 using PayCalculator.core.Model.Tax;
+using PayCalculator.Ext.Model.Tax;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace PayCalculator.Ext.BusinessObjects.Tax.Australia
 {
-    public class IncomeTaxCalculator : ITaxCalculator 
+    public class IncomeTaxCalculator : IAustraliaDecoratableTaxCalculator
     {
         protected readonly ILog _log = LogManager.GetLogger("AU Income tax calc");
         private List<ITaxBracket> _taxBrackets;

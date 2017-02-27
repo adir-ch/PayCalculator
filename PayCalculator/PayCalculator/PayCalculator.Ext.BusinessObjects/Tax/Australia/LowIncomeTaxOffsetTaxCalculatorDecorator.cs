@@ -1,5 +1,6 @@
 ﻿using log4net;
 using PayCalculator.core.Model.Tax;
+using PayCalculator.Ext.Model.Tax;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace PayCalculator.Ext.BusinessObjects.Tax.Australia
         // maybe I should add another base class for all the tax calculators decorators to hold the actual tax calculator
         private ITaxCalculator _decoratedCalculator = null;
 
-        public LowIncomeTaxOffsetTaxCalculatorDecorator(ITaxCalculator calculator)
+        public LowIncomeTaxOffsetTaxCalculatorDecorator(IAustraliaDecoratableTaxCalculator calculator)
         {
             _decoratedCalculator = calculator;
         }
