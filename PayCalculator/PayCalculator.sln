@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayCalculator", "PayCalculator\PayCalculator.csproj", "{506B32ED-0FDE-49A6-B123-91FC1FB2BE4C}"
 EndProject
@@ -49,6 +49,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayCalculator.Ext.Model", "PayCalculator\PayCalculator.Ext.Model\PayCalculator.Ext.Model.csproj", "{D20856E3-EDC3-4682-BEE5-B657D41A7A1A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IntegrationTests", "IntegrationTests", "{5C3203AA-92D7-4311-9231-80AF02A6A513}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayCalculator.IntegrationTests", "PayCalculator\PayCalculator.IntegrationTests\PayCalculator.IntegrationTests.csproj", "{6D2196B4-DE94-4400-BE13-55E11765B14D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -108,6 +110,10 @@ Global
 		{D20856E3-EDC3-4682-BEE5-B657D41A7A1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D20856E3-EDC3-4682-BEE5-B657D41A7A1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D20856E3-EDC3-4682-BEE5-B657D41A7A1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D2196B4-DE94-4400-BE13-55E11765B14D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D2196B4-DE94-4400-BE13-55E11765B14D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D2196B4-DE94-4400-BE13-55E11765B14D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D2196B4-DE94-4400-BE13-55E11765B14D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -127,5 +133,6 @@ Global
 		{17E30C74-AA0A-4EBD-8E03-32C34A0C1908} = {49314DAF-9DAC-42A5-8BE5-657D0E8983C3}
 		{6AEC5061-6A59-4768-BCED-DBF10626ABDD} = {F15DB579-7131-4945-B55B-76D007E28DCE}
 		{D20856E3-EDC3-4682-BEE5-B657D41A7A1A} = {49314DAF-9DAC-42A5-8BE5-657D0E8983C3}
+		{6D2196B4-DE94-4400-BE13-55E11765B14D} = {5C3203AA-92D7-4311-9231-80AF02A6A513}
 	EndGlobalSection
 EndGlobal

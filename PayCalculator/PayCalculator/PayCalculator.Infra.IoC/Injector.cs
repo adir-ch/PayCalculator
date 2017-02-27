@@ -53,14 +53,21 @@ namespace PayCalculator.Infra.IoC
             }
             else
             {
-                // Ugly hack for the integration tests
                 TryLoadingAlternateConfigurationFile();
             }
         }
 
+        // Ugly hack for the integration tests, since the container is needed, but does not run 
+        // under the PayCalculator project 
+        // It is used only to simulate a real end to end testing environment
         private void TryLoadingAlternateConfigurationFile()
         {
             var filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "unity.config");
+            if (filePath.Contains("IntegrationTests") == false)
+            {
+                return; 
+            }
+
             var fileMap = new ExeConfigurationFileMap { ExeConfigFilename = filePath };
 
             System.Configuration.Configuration configuration =

@@ -40,8 +40,9 @@ serializes / deserializers - which I do not implement here (for simplicity purpo
 
 - Integration tests are actually an end to end test.
 - Those test can be also refereed to as behavioral test, since they check the results without all the small steps in between.
-- The principle is to send a request and compare the response to should-be response.
+- The principle is to send a request and compare the response to should-be (or expected) response.
 - I've created an Integration test for each service.
+- In real life application, the test will also use the actual WebApi when running the test.
 
 ### 3rd party ###
 
