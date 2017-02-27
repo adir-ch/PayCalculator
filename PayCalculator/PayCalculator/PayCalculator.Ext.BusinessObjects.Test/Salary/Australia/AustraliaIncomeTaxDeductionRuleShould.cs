@@ -16,14 +16,14 @@ namespace PayCalculator.Ext.BusinessObjects.Test.Salary.Australia
     {
         private IncomeTaxDeductionRule _deductionRule;
         private Injector _injector;
-        private Mock<ITaxCalculator> _taxCalcularotMock; 
+        private Mock<ITaxCalculator> _taxCalculatorMock; 
 
         [OneTimeSetUp]
         public void Init()
         {
             _injector = Injector.Instance;
-            _taxCalcularotMock = new Mock<ITaxCalculator>(); 
-            _injector.RegisterInstance<ITaxCalculator>(_taxCalcularotMock.Object, "AustraliaIncomeTaxCalculator"); 
+            _taxCalculatorMock = new Mock<ITaxCalculator>(); 
+            _injector.RegisterInstance<ITaxCalculator>(_taxCalculatorMock.Object, "AustraliaIncomeTaxCalculator"); 
         }
 
         [SetUp]
@@ -41,12 +41,12 @@ namespace PayCalculator.Ext.BusinessObjects.Test.Salary.Australia
         [Test]
         public void CallCalculateTaxOnRuleApply([Values(0, 1000, 5000)] decimal taxableIncome)
         {
-            _taxCalcularotMock.Setup(calc => calc.CalculateTax(taxableIncome)).Returns(100);
+            _taxCalculatorMock.Setup(calc => calc.CalculateTax(taxableIncome)).Returns(100);
             var taxDeduction = _deductionRule.Apply(taxableIncome);
 
             if(taxableIncome > 0)
             {
-                _taxCalcularotMock.Verify(f => f.CalculateTax(taxableIncome), Times.Once());
+                _taxCalculatorMock.Verify(f => f.CalculateTax(taxableIncome), Times.Once());
                 Assert.That(taxDeduction, Is.EqualTo(100)); 
             }
         }
@@ -57,7 +57,7 @@ namespace PayCalculator.Ext.BusinessObjects.Test.Salary.Australia
         [TestCase(200000, ExpectedResult = 100)]
         public decimal ReturnZeroTaxForZeroTaxableIncome(decimal taxableIncome)
         {
-            _taxCalcularotMock.Setup(calc => calc.CalculateTax(taxableIncome)).Returns(100);
+            _taxCalculatorMock.Setup(calc => calc.CalculateTax(taxableIncome)).Returns(100);
             return _deductionRule.Apply(taxableIncome);
         }
     }

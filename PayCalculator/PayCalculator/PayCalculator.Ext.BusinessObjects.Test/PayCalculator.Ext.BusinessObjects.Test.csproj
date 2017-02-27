@@ -51,6 +51,7 @@
     <Compile Include="Salary\Australia\AustraliaIncomeTaxDeductionRuleShould.cs" />
     <Compile Include="Salary\Australia\AustraliaSalaryDeductionsShould.cs" />
     <Compile Include="Salary\Australia\AustraliaSalaryStrategyShould.cs" />
+    <Compile Include="Salary\Australia\MedicareLevyDeductionRuleShoud.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Tax\" />
