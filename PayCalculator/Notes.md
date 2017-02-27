@@ -31,9 +31,13 @@ This document will be updated during my work.
 - Setting the data in the contracts as is (not doing any conversion), in real life application it should be converted by the
 serializes / deserializers - which I do not implement here (for simplicity purpose).
 - Contract request / response validation should be done after deserialize (according to a schema). All data arriving to the server service should be already valid.
-- Didn't waste time on creating my own exception and used the .NET ones.
 - Abstract classes are tested through testing the derived classes.
 - Australian tax offset - if calculated tax is smaller than 445, I've set the tax to 0 (unless you get money for earning low income - didn't really know what to do...).
+
+### Error handling ###
+
+- A Service error response will be sent back to the client if the server had an exception. It is the client responsibility to handle to error response correctly (since I've implemented a thin client, I only implemented basic error handling).
+- Didn't waste time on creating my own exception and used the .NET ones.
 
 
 ### Integration tests ###
