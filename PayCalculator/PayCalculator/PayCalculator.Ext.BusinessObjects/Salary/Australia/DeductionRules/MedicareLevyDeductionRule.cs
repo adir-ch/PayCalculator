@@ -1,4 +1,6 @@
 ﻿using PayCalculator.core.Model.Salary;
+using PayCalculator.core.Model.Tax;
+using PayCalculator.Infra.IoC;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +20,8 @@ namespace PayCalculator.Ext.BusinessObjects.Salary.Australia.DeductionRules
 
         public decimal Apply(decimal taxableIncome)
         {
-            throw new NotImplementedException();
+            ITaxCalculator calculator = Injector.Instance.Inject<ITaxCalculator>("AustraliaMedicareLevyCalculator");
+            return calculator.CalculateTax(taxableIncome); 
         }
     }
 }
