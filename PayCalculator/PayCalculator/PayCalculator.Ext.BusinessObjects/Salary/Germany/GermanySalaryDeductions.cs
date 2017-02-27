@@ -18,7 +18,7 @@ namespace PayCalculator.Ext.BusinessObjects.Salary.Germany
             // var rules = DB.GetAsutraliaSalaryDeductionsRules(); 
             // var rules = WebApi.GetConfigurationService("AsutraliaSalaryDeductionsRules"); 
 
-            var fetchedRules = new List<string>() { "IncomeTaxDeductionRule", 
+            var fetchedRules = new List<string>() { "GermanyIncomeTaxDeductionRule", 
                                                     "SolidaritySurchargeDeductionRule" };
 
             var rules = fetchedRules.Select(ruleName => Injector.Instance.Inject<IDeductionRule>(ruleName));
