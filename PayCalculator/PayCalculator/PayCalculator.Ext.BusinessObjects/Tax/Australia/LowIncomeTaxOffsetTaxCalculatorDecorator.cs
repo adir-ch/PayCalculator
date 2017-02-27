@@ -40,7 +40,7 @@ namespace PayCalculator.Ext.BusinessObjects.Tax.Australia
                     return 0;
                 }
             }
-            return (baseTax - lowIncomeTaxOffset);
+            return Math.Round((baseTax - lowIncomeTaxOffset), MidpointRounding.AwayFromZero);
         }
     }
 }
