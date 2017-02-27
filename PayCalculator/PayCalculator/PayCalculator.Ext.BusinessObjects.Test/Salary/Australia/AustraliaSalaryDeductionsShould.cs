@@ -27,7 +27,7 @@ namespace PayCalculator.core.BusinessObjects.Test.Salary
         {
             _deductionRuleMock = new Mock<IDeductionRule>(); 
             _injector = Injector.Instance;
-            _injector.RegisterInstance<IDeductionRule>(_deductionRuleMock.Object, "IncomTaxDeductionRule");
+            _injector.RegisterInstance<IDeductionRule>(_deductionRuleMock.Object, "AustraliaIncomeTaxDeductionRule");
             _injector.RegisterInstance<IDeductionRule>(_deductionRuleMock.Object, "MedicareLevyDeductionRule");
             _injector.RegisterInstance<IDeductionRule>(_deductionRuleMock.Object, "BudgetRepairTaxDeductionRule");
             _deductionRuleMock.Setup(rule => rule.Apply(It.IsAny<decimal>())).Returns(100);
