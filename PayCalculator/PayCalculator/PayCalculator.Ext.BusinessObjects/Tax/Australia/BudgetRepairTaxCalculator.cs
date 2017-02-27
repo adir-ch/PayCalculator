@@ -20,8 +20,9 @@ namespace PayCalculator.Ext.BusinessObjects.Tax.Australia
                 totalBudgetRepairTax = ((taxableIncome - 180000) * (decimal)0.02);
             }
 
-            _log.DebugFormat("Calculated total budget repair: {0}", totalBudgetRepairTax);
-            return totalBudgetRepairTax; 
+            var roundedTotalBudgetRepairTax = Math.Round(totalBudgetRepairTax, MidpointRounding.AwayFromZero);
+            _log.DebugFormat("Calculated total budget repair: {0}", roundedTotalBudgetRepairTax);
+            return roundedTotalBudgetRepairTax; 
         }
     }
 }
