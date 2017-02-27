@@ -33,6 +33,7 @@ serializes / deserializers - which I do not implement here (for simplicity purpo
 - Contract request / response validation should be done after deserialize (according to a schema). All data arriving to the server service should be already valid.
 - Didn't waste time on creating my own exception and used the .NET ones.
 - Abstract classes are tested through testing the derived classes.
+- Australian tax offset - if calculated tax is smaller than 445, I've set the tax to 0 (unless you get money for earning low income - didn't really know what to do...).
 
 ### 3rd party ###
 
