@@ -1,4 +1,6 @@
 ﻿using PayCalculator.core.Model.Salary;
+using PayCalculator.core.Model.Tax;
+using PayCalculator.Infra.IoC;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,26 +11,21 @@ namespace PayCalculator.Ext.BusinessObjects.Salary.NewZealand.DeductionRules
 {
     public class IncomeTaxDeductionRule : IDeductionRule
     {
-        public string RuleName
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public string RuleName { get; set; }
 
         public string GetRuleDescription()
         {
-            throw new NotImplementedException();
+            return "Income Tax"; // take from DB or config
         }
 
         public decimal Apply(decimal taxableIncome)
         {
-            throw new NotImplementedException();
+            if (taxableIncome <= 0)
+            {
+                return 0;
+            }
+            ITaxCalculator calculator = Injector.Instance.Inject<ITaxCalculator>("NewZealandIncomeTaxCalculator");
+            return calculator.CalculateTax(taxableIncome);
         }
     }
 }

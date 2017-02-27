@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Location\AustraliaLocation.cs" />
+    <Compile Include="Location\NewZealandLocation.cs" />
     <Compile Include="Salary\Australia\AustraliaSalaryDeductions.cs" />
     <Compile Include="Salary\Australia\AustraliaSalaryStrategy.cs" />
     <Compile Include="Location\GermanyLocation.cs" />
