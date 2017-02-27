@@ -15,7 +15,7 @@ namespace PayCalculator.Ext.BusinessObjects.Test.Tax.Australia
         [TestCase(200000, ExpectedResult = 63232)]
         [TestCase(0, ExpectedResult = 0)]
         [TestCase(18201, ExpectedResult = 0)]
-        [TestCase(85000, ExpectedResult = 19172)]
+        [TestCase(85000, ExpectedResult = 0)]
         public decimal CalculateBudgetRepairTax(decimal taxableIncome)
         {
             var budgetRepairTaxCalculator = new BudgetRepairTaxCalculator();
