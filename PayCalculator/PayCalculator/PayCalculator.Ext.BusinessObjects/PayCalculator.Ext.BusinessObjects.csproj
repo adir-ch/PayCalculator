@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=2.0.7.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\log4net.2.0.7\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -50,7 +54,9 @@
     <Compile Include="Salary\Australia\DeductionRules\MedicareLevyDeductionRule.cs" />
     <Compile Include="Tax\Australia\IncomeTaxCalculator.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PayCalculator.core.BusinessObjects\PayCalculator.core.BusinessObjects.csproj">
       <Project>{13de9634-2911-45bb-993a-c0d7fb12a759}</Project>
