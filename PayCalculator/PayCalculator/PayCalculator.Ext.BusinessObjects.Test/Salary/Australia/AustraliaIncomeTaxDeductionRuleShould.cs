@@ -43,8 +43,12 @@ namespace PayCalculator.Ext.BusinessObjects.Test.Salary.Australia
         {
             _taxCalcularotMock.Setup(calc => calc.CalculateTax(taxableIncome)).Returns(100);
             var taxDeduction = _deductionRule.Apply(taxableIncome);
-            _taxCalcularotMock.Verify(f => f.CalculateTax(taxableIncome), Times.Once());
-            Assert.That(taxDeduction, Is.EqualTo(100)); 
+
+            if(taxableIncome > 0)
+            {
+                _taxCalcularotMock.Verify(f => f.CalculateTax(taxableIncome), Times.Once());
+                Assert.That(taxDeduction, Is.EqualTo(100)); 
+            }
         }
 
         [Test]
