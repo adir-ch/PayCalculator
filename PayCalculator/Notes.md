@@ -39,6 +39,9 @@ serializes / deserializers - which I do not implement here (for simplicity purpo
 - A Service error response will be sent back to the client if the server had an exception. It is the client responsibility to handle to error response correctly (since I've implemented a thin client, I only implemented basic error handling).
 - Didn't waste time on creating my own exception and used the .NET ones.
 
+### Testings ###
+
+- I've created tests for an Australian employee, and not for the rest, since the tests are almost identical. 
 
 ### Integration tests ###
 
