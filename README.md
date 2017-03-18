@@ -1,21 +1,3 @@
-With this test, we want to understand your way of thinking as well as the decisions you make when designing a solution. This is not a pass or fail type of test. What we want here is to see your ability to write a clean and well-factored solution following the TDD principles and adherent to the SOLID principles. We will be looking your ability to abstract and design an extensible and maintainable code. If you see an opportunity to apply some design patterns, please do so.
-
-### Technology ###
-C# Console Application
-
-### Timebox ###
-4 hours
-
-### Constraints ###
-
-- A commit MUST be done after each passing test that you have written
-- A commit MUST be done after each refactoring that you accomplished in your solution
-- The solution must be solely created by the candidate from scratch
-- The solution will be judged on the ability of the candidate to use best practices for architecture and coding
-- The solution MUST follow the TDD principles and be adherent to the SOLID principles
-- When you starts the test, please make an empty commit with the comment "Starting"
-- When you ends the test, please make an empty commit with the comment "Finished"
-
 ### Problem ###
 
 As an employee located in Australia, I would like to see my deductions charged in my wages so that I can correctly calculate my net salary
